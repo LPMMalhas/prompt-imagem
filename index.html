@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Prompts para E-commerce</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=pQ9SJeYFvy3Wi3YBRDrVuYYt547dd0ktPj_5jYZX1rQC0azKNSjwr5lIefgfkQ_AInxF1S6A3aWNWVG9nbpwCA" charset="UTF-8"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        ::placeholder { color: #6b7280; }
-        .accordion-content { transition: max-height 0.5s ease-in-out; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        ::placeholder {
+            color: #6b7280;
+        }
+        .accordion-content {
+            transition: max-height 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white antialiased">
-
     <div class="container mx-auto px-4 py-8 md:py-12">
         <header class="text-center mb-10">
             <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Gerador de Prompts Profissional</h1>
             <p class="mt-3 text-lg text-gray-400 max-w-3xl mx-auto">Crie prompts ultra-detalhados com controle granular para resultados perfeitos.</p>
         </header>
-
         <main class="max-w-4xl mx-auto space-y-12">
-       
             <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
                 <form id="prompt-form" class="space-y-4">
                     <div class="accordion-item border-b border-gray-700 pb-4">
@@ -41,7 +45,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div id="modelo-accordion" class="accordion-item border-b border-gray-700 pb-4">
                         <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
                             <span class="text-2xl font-bold text-cyan-300">Modelo</span>
@@ -102,7 +105,7 @@
                                         <option value="pele asiática (amarela)" title="Tom de pele com fundo amarelado, comum em populações do leste asiático.">Asiática (Amarela)</option>
                                     </select>
                                 </div>
-                                 <div>
+                                <div>
                                     <label for="expression" class="block text-sm font-medium mb-1 text-gray-300">Expressão Facial</label>
                                     <select id="expression" name="expression" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
                                         <option value="séria e confiante" selected title="Um olhar focado e seguro, comum em fotos de moda e esporte.">Séria e Confiante</option>
@@ -171,7 +174,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="accordion-item border-b border-gray-700 pb-4">
                         <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
                             <span class="text-2xl font-bold text-cyan-300">Vestuário e Cena</span>
@@ -227,7 +229,7 @@
                                     <label for="topColor" class="block text-sm font-medium mb-1 text-gray-300">Cor (Parte de Cima)</label>
                                     <input type="text" id="topColor" name="topColor" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: Preto">
                                 </div>
-                                 <div>
+                                <div>
                                     <label for="printType" class="block text-sm font-medium mb-1 text-gray-300">Estampa (Parte de Cima)</label>
                                     <select id="printType" name="printType" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
                                         <option value="lisa" selected title="Cor única, sem estampas.">Lisa</option>
@@ -314,7 +316,7 @@
                                     <input type="text" id="footwearColor" name="footwearColor" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: Branco com detalhes cinza">
                                 </div>
                                 <div class="sm:col-span-2">
-                                     <label for="shoeBrand" class="block text-sm font-medium mb-1 text-gray-300">Marca (Calçado)</label>
+                                    <label for="shoeBrand" class="block text-sm font-medium mb-1 text-gray-300">Marca (Calçado)</label>
                                     <input type="text" id="shoeBrand" name="shoeBrand" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: Nike, Adidas (deixe em branco para sem marca)">
                                 </div>
                                 <div class="sm:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
@@ -367,7 +369,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div id="acessorios-accordion" class="accordion-item border-b border-gray-700 pb-4">
                         <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
                             <span class="text-2xl font-bold text-cyan-300">Acessórios e Detalhes</span>
@@ -433,11 +434,10 @@
                                 <div class="sm:col-span-2">
                                     <label for="accessoryDetails" class="block text-sm font-medium mb-1 text-gray-300">Detalhes dos Acessórios</label>
                                     <input type="text" id="accessoryDetails" name="accessoryDetails" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: boné preto com logo branco, óculos de sol aviador">
-                                 </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                     <div id="realismo-accordion" class="accordion-item border-b border-gray-700 pb-4">
                         <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
                             <span class="text-2xl font-bold text-cyan-300">Realismo e Pose</span>
@@ -495,9 +495,9 @@
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
-                                     <label for="pose_custom" class="block text-sm font-medium mb-1 text-gray-300">Pose Personalizada (Opcional)</label>
+                                    <label for="pose_custom" class="block text-sm font-medium mb-1 text-gray-300">Pose Personalizada (Opcional)</label>
                                     <input type="text" id="pose_custom" name="pose_custom" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: sentada em um banco, de perfil (ignora o menu acima)">
-                                     <p class="text-xs text-gray-400 mt-1">Se preenchido, este campo substitui o menu "Pose da Modelo" acima.</p>
+                                    <p class="text-xs text-gray-400 mt-1">Se preenchido, este campo substitui o menu "Pose da Modelo" acima.</p>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <label for="face_realism" class="block text-sm font-medium mb-1 text-gray-300">Detalhes de Rosto (Realismo)</label>
@@ -511,10 +511,9 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="accordion-item pb-4">
                         <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
-                            <span class="text-2xl font-bold text-cyan-300">Câmera & Estúdio</span>
+                             <span class="text-2xl font-bold text-cyan-300">Câmera & Estúdio</span>
                              <span id="suggestion-feedback" class="text-sm font-semibold text-yellow-400 opacity-0 transition-opacity duration-500"></span>
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                         </h3>
@@ -636,12 +635,11 @@
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
-                                     <label for="imageResolution" class="block text-sm font-medium mb-1 text-gray-300">Formato / Proporção da Imagem</label>
+                                    <label for="imageResolution" class="block text-sm font-medium mb-1 text-gray-300">Formato / Proporção da Imagem</label>
                                      <select id="imageResolution" name="imageResolution" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
                                         <option value="proporção 1:1 (quadrado)" title="Formato quadrado, ideal para posts de feed no Instagram.">1:1 (Quadrado)</option>
                                         <option value="proporção 4:5 (retrato)" title="Formato vertical, ideal para posts de feed no Instagram.">4:5 (Retrato Instagram)</option>
-                                        <option value="proporção 9:16 (story)" title="Formato vertical alto, para Stories, Reels e TikTok.">9:16 (Story/Reels)</option>
-                                        <option value="proporção 16:9 (widescreen)" title="Formato horizontal, para banners de site e thumbnails de vídeo.">16:9 (Widescreen)</option>
+                                        <option value="proporção 9:16 (story)" title="Formato vertical alto, para Stories, Reels e TikTok.">9:16 (Story/Reels)</option>                                        <option value="proporção 16:9 (widescreen)" title="Formato horizontal, para banners de site e thumbnails de vídeo.">16:9 (Widescreen)</option>
                                         <option value="proporção 3:2 (padrão foto)" title="Proporção clássica de câmeras DSLR.">3:2 (Padrão Câmera)</option>
                                         <option value="proporção 2:3 (retrato foto)" title="Versão vertical da proporção de câmera.">2:3 (Retrato Câmera)</option>
                                         <option value="resolução 1080x1080px" title="Resolução exata para um quadrado de alta qualidade.">1080x1080px</option>
@@ -654,22 +652,18 @@
                     </div>
                 </form>
             </div>
-
             <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
                 <h2 class="text-2xl font-bold mb-4 text-cyan-300">Prompts Gerados</h2>
-                
                 <div class="mb-6">
                     <label class="block text-lg font-semibold mb-2 text-gray-200">Prompt em Português (Editável)</label>
                     <textarea id="prompt-pt" rows="8" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg font-mono text-gray-300 focus:ring-2 focus:ring-cyan-500 focus:outline-none"></textarea>
                     <button onclick="copyPrompt('pt')" class="mt-2 w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-lg transition duration-200">Copiar</button>
                 </div>
-
                 <div>
                     <label class="block text-lg font-semibold mb-2 text-gray-200">Prompt in English (Automático)</label>
                     <textarea id="prompt-en" rows="8" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg font-mono text-gray-300" readonly></textarea>
                     <button onclick="copyPrompt('en')" class="mt-2 w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-lg transition duration-200">Copiar</button>
                 </div>
-
                 <div id="copy-message" class="mt-4 text-center text-green-400 font-semibold opacity-0 transition-opacity duration-300">
                     Prompt copiado!
                 </div>
@@ -684,70 +678,8 @@
             </div>
         </main>
     </div>
-
-      <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-        // Importa a biblioteca Generative AI diretamente via ESM
-        import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
-
-        // Sua configuração do Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyAoVJrxEAn-kgNG2NWbP-WGmx_5GxPTB2g",
-            authDomain: "gerador-prompt-imagem.firebaseapp.com",
-            projectId: "gerador-prompt-imagem",
-            storageBucket: "gerador-prompt-imagem.firebasestorage.app",
-            messagingSenderId: "335512486472",
-            appId: "1:335512486472:web:ee40386c723705e8854e7d"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        console.log("Firebase inicializado.");
-
-        // Inicializa o Gemini com a mesma API Key do Firebase
-        const genAI = new GoogleGenerativeAI(firebaseConfig.apiKey);
-        
-        // --- CORREÇÃO AQUI ---
-        // Mudamos de "gemini-pro" para "gemini-1.5-flash" que é a versão atual suportada
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-        // Expõe a função de tradução globalmente para o script padrão usar
-        window.translatePortugueseToEnglish = async function(portugueseText) {
-            const englishTextarea = document.getElementById('prompt-en');
-            
-            if (!portugueseText.trim()) {
-                englishTextarea.value = '';
-                return;
-            }
-
-            englishTextarea.value = 'Traduzindo... (via Gemini 1.5 Flash)';
-
-            try {
-                // Prompt seguro para tradução técnica
-                const prompt = `Translate the following prompt from Portuguese to English, maintaining all technical photography terms (like 'bokeh', '8k', 'raw', 'slim fit') exactly as they are usually used in English prompts. Do not add any conversational text, just the translation.\n\nTexto: ${portugueseText}`;
-
-                const result = await model.generateContent(prompt);
-                const response = await result.response;
-                const translatedText = response.text();
-
-                englishTextarea.value = translatedText.trim();
-            } catch (error) {
-                console.error('Erro na tradução Gemini:', error);
-                
-                if (error.toString().includes("API key not valid")) {
-                    englishTextarea.value = "Erro: Chave de API inválida ou API Gemini não ativada no console do Google Cloud.";
-                } else if (error.toString().includes("403")) {
-                     englishTextarea.value = "Erro 403: Acesso negado. Verifique se a 'Generative Language API' está ativada no seu projeto Firebase/Google Cloud.";
-                } else if (error.toString().includes("404")) {
-                     englishTextarea.value = "Erro 404: Modelo não encontrado. Verifique o nome do modelo no código (atualmente gemini-1.5-flash).";
-                } else {
-                    englishTextarea.value = `Erro ao traduzir: ${error.message || error}`;
-                }
-            }
-        };
-    </script>
-
     <script>
-        // --- LÓGICA DE INTERFACE (UI) ---
+        // --- 1. Seleção de Elementos e Mapeamentos ---
         const form = document.getElementById('prompt-form');
         const clearButton = document.getElementById('clear-button');
         const printButton = document.getElementById('print-button');
@@ -761,14 +693,10 @@
         const modeloAccordion = document.getElementById('modelo-accordion');
         const acessoriosAccordion = document.getElementById('acessorios-accordion');
         const realismoAccordion = document.getElementById('realismo-accordion');
-        
-        // Mapeamentos de tradução rápida para interface
         const accessories_pt = { acc_cap: 'boné', acc_sunglasses: 'óculos de sol', acc_watch: 'relógio esportivo', acc_headphones: 'fones de ouvido', acc_glasses: 'óculos de grau', acc_hat: 'chapéu', acc_necklace: 'colar', acc_earrings: 'brincos', acc_backpack: 'mochila', acc_viseira: 'viseira' };
         const lighting_details_pt = { light_rim: 'contra-luz (rim light) para recortar a silhueta', light_reflector: 'uso de rebatedor para suavizar sombras', light_gobo: 'uso de gobo para criar padrões de sombra' };
-        
         const scenarioSelect = document.getElementById('scenario');
         const suggestionFeedback = document.getElementById('suggestion-feedback');
-        
         const scenarioSuggestions = {
             'academia moderna com equipamentos': {photographer_style: 'no estilo de fotografia de lifestyle comercial',lighting: 'iluminação de estúdio com softbox principal',photoAngle: 'de baixo para cima (low angle)',lensType: 'lente 50mm', message: 'Sugestões para foto de ação em academia.'},
             'estúdio com fundo branco': {photographer_style: 'no estilo de uma fotografia de moda editorial (Vogue, Elle)',lighting: 'iluminação de estúdio com softbox principal',photoAngle: 'ao nível dos olhos',lensType: 'lente 85mm',aperture: 'com abertura f/8', message: 'Setup clássico de estúdio para e-commerce.'},
@@ -782,19 +710,17 @@
             'quarto de menina com decoração lúdica': {photographer_style: 'no estilo documental e natural (National Geographic)',lighting: 'luz natural suave de janela',photoAngle: 'ao nível dos olhos',lensType: 'lente 35mm',aperture: 'com abertura f/2.8', message: 'Sugestões para um ambiente infantil e aconchegante.'},
             'quarto de menino com decoração temática': {photographer_style: 'no estilo documental e natural (National Geographic)',lighting: 'luz natural suave de janela',photoAngle: 'ao nível dos olhos',lensType: 'lente 35mm',aperture: 'com abertura f/2.8', message: 'Sugestões para um ambiente infantil e aconchegante.'},
         };
-
-        // --- GERAÇÃO DE PROMPT EM PORTUGUÊS ---
+        // --- 2. Função Principal: Gerar Prompts ---
         function generatePrompts() {
             const data = Object.fromEntries(new FormData(form).entries());
             const isMale = data.gender === 'menino' || data.gender === 'homem';
             const artigoPT = isMale ? 'um' : 'uma';
             const pronomePT = isMale ? 'Ele' : 'Ela';
             const nacionalidadePT = isMale ? data.nationality.replace(/a$/, 'o') : data.nationality;
-
+            // --- Geração de Prompt em Português ---
+            const isInfantil = data.gender === 'menina' || data.gender === 'menino';
             let promptPT = '';
             let technicalCommands = '';
-
-            // Comandos Técnicos Iniciais
             if (data.imageSeed) {
                 technicalCommands += `--seed ${data.imageSeed} `;
             }
@@ -807,109 +733,118 @@
             if(technicalCommands) {
                 promptPT += `COMANDO TÉCNICO PRIMÁRIO: ${technicalCommands}\n\n`;
             }
-
-            // Enquadramento
             if (data.tipo_fotografia === 'modelo_vivo') {
                  promptPT += 'COMANDO DE ENQUADRAMENTO: A imagem DEVE ser um plano de corpo inteiro (full-body shot), mostrando a(o) modelo da cabeça aos pés, sem cortar nenhuma parte do corpo ou do calçado.\n\n';
             }
-            
-            // Referência de Produto
             let referencePieceText = 'A peça de roupa principal';
             switch (data.reference_piece) {
-                case 'conjunto_completo': referencePieceText = 'O conjunto completo (partes de cima e de baixo)'; break;
-                case 'parte_de_cima': referencePieceText = 'parte de cima (camiseta, top, etc.)'; break;
-                case 'parte_de_baixo': referencePieceText = 'parte de baixo (calça, saia, etc.)'; break;
-                case 'peca_unica': referencePieceText = 'peça única (vestido, macacão, etc.)'; break;
+                case 'conjunto_completo':
+                    referencePieceText = 'O conjunto completo (partes de cima e de baixo)';
+                    break;
+                case 'parte_de_cima':
+                    referencePieceText = 'parte de cima (camiseta, top, etc.)';
+                    break;
+                case 'parte_de_baixo':
+                    referencePieceText = 'parte de baixo (calça, saia, etc.)';
+                    break;
+                case 'peca_unica':
+                    referencePieceText = 'peça única (vestido, macacão, etc.)';
+                    break;
             }
-
-            promptPT += `COMANDO DE REPLICAÇÃO DE PRODUTO: A imagem de referência fornecida é a autoridade máxima para o design do produto. A ${referencePieceText} DEVE SER UMA RÉPLICA EXATA daquela na imagem. Use as seguintes instruções de texto APENAS para construir a cena, a modelo e a atmosfera AO REDOR do produto, mas NÃO para alterar o produto em si.\n\n`;
-
-            // Caimento
+            promptPT += `COMANDO DE REPLICAÇÃO DE PRODUTO: A imagem de referência fornecida é a autoridade máxima para o design do produto.A ${referencePieceText} DEVE SER UMA RÉPLICA EXATA daquela na imagem.Use as seguintes instruções de texto APENAS para construir a cena, a modelo e a atmosfera AO REDOR do produto, mas NÃO para alterar o produto em si.\n\n`;
             let fitInstruction = '';
             switch (data.reference_fit) {
-                case 'justo_no_corpo': fitInstruction = `O caimento da peça deve ser justo no corpo (slim fit), valorizando a silhueta.`; break;
-                case 'solto': fitInstruction = `O caimento da peça deve ser solto e despojado (oversized).`; break;
+                case 'justo_no_corpo':
+                    fitInstruction = `O caimento da peça deve ser justo no corpo (slim fit), valorizando a silhueta. `;
+                    break;
+                case 'solto':
+                    fitInstruction = `O caimento da peça deve ser solto e despojado (oversized). `;
+                    break;
             }
-            if (fitInstruction) promptPT += `COMANDO DE CAIMENTO: ${fitInstruction}\n\n`;
-
-            // Direção de Arte Geral
-            promptPT += `DIREÇÃO DE ARTE E CENA: Simule uma fotografia de moda profissional capturada por um fotógrafo renomado com equipamento de ponta. O resultado final DEVE ser indistinguível de uma foto real, com um nível de detalhe extremo. Preste atenção meticulosa à física da luz, criando sombras suaves e realistas, reflexos especulares precisos nos materiais, vincos naturais nas roupas, e a micro-textura dos tecidos e da pele. `;
-
-            // Construção da Cena/Modelo
+            if (fitInstruction) {
+                promptPT += `COMANDO DE CAIMENTO: ${fitInstruction}\n\n`;
+            }
+            promptPT += `DIREÇÃO DE ARTE E CENA: Simule uma fotografia de moda profissional capturada por um fotógrafo renomado com equipamento de ponta.O resultado final DEVE ser indistinguível de uma foto real, com um nível de detalhe extremo.Preste atenção meticulosa à física da luz, criando sombras suaves e realistas, reflexos especulares precisos nos materiais, vincos naturais nas roupas, e a micro-textura dos tecidos e da pele.`;
             if (data.tipo_fotografia === 'modelo_vivo') {
-                const isInfantil = data.gender === 'menina' || data.gender === 'menino';
                 if (isInfantil) {
-                     promptPT += `A direção de arte é para e-commerce infantil. A imagem deve mostrar ${artigoPT} ${data.gender} ${nacionalidadePT}, com aproximadamente ${data.age ? data.age + ' anos' : 'a idade selecionada'}, com tom de pele ${data.skinTone}, ${data.makeup} e com uma expressão ${data.expression}.`;
+                     const ecommerceType = 'infantil';
+                    promptPT += `A direção de arte é para e-commerce ${ecommerceType}.A imagem deve mostrar ${artigoPT} ${data.gender} ${nacionalidadePT}, com aproximadamente ${data.age ? data.age + ' anos' : 'a idade selecionada'}, com tom de pele ${data.skinTone}, ${data.makeup} e com uma expressão ${data.expression}.`;
                 } else {
-                    promptPT += `A direção de arte é para e-commerce fitness.`;
+                    const ecommerceType = 'fitness';
+                    promptPT += `A direção de arte é para e-commerce ${ecommerceType}.`;
                     let modelDescription = ` A modelo é ${artigoPT} ${data.gender || ''} ${nacionalidadePT} de ${data.age ? data.age + ' anos' : ''}`;
                     modelDescription += ` com corpo ${data.bodyType} e tom de pele ${data.skinTone}`;
                     modelDescription += `, ${data.makeup}, com expressão ${data.expression}.`;
                     promptPT += modelDescription;
                 }
                 promptPT += ` ${pronomePT} tem cabelo ${data.hairLength} ${data.hairType} ${data.hairColor}, e olhos ${data.eyeColor}.`;
-
             } else if (data.tipo_fotografia === 'manequim_fantasma') {
-                promptPT += `A foto deve usar a técnica de 'manequim fantasma' (ghost mannequin). A ${referencePieceText} deve ser fotografada em um fundo branco puro, mostrando a forma 3D, o caimento e o interior (gola/cintura) como se estivesse em um corpo invisível. A iluminação deve ser de estúdio, difusa e uniforme, sem sombras fortes.`;
+                promptPT += `A foto deve usar a técnica de 'manequim fantasma' (ghost mannequin).A ${referencePieceText} deve ser fotografada em um fundo branco puro, mostrando a forma 3D, o caimento e o interior (gola/cintura) como se estivesse em um corpo invisível.A iluminação deve ser de estúdio, difusa e uniforme, sem sombras fortes.`;
             } else if (data.tipo_fotografia === 'flat_lay') {
-                promptPT += `A foto deve ser um 'flat lay' (ângulo zenital/de cima). A ${referencePieceText} deve estar perfeitamente esticada e estilizada de forma limpa sobre uma superfície de ${data.scenario}. A iluminação deve ser ${data.lighting}, suave e uniforme, eliminando sombras fortes. A peça deve estar sem vincos e amassados.`;
+                promptPT += `A foto deve ser um 'flat lay' (ângulo zenital/de cima).A ${referencePieceText} deve estar perfeitamente esticada e estilizada de forma limpa sobre uma superfície de ${data.scenario}.A iluminação deve ser ${data.lighting}, suave e uniforme, eliminando sombras fortes. A peça deve estar sem vincos e amassados.`;
             }
-
-            // Vestuário Detalhado
             let vestuario = `vestindo um ${data.top} ${data.topColor || ''} ${data.printType}`;
             if (data.clothingDetails) vestuario += `, ${data.clothingDetails}`;
             vestuario += `, ${data.bottom} ${data.bottomColor || ''}`;
             if(data.bottomClothingDetails) vestuario += `, ${data.bottomClothingDetails}`;
-            
             let footwearDesc = '';
             if (data.footwear && data.footwear !== 'descalço(a)') {
                 footwearDesc = `e calçando ${data.footwear} ${data.footwearColor || ''}`;
-                if (data.shoeBrand) footwearDesc += ` da marca ${data.shoeBrand}`;
+                if (data.shoeBrand) {
+                    footwearDesc += ` da marca ${data.shoeBrand}`;
+                }
             }
-            if (footwearDesc) vestuario += ` ${footwearDesc}`;
-            if (data.socks_enabled) vestuario += `, usando meias do tipo ${data.socks_type} na cor ${data.socks_color || 'não especificada'}`;
-
+            if (footwearDesc) {
+                 vestuario += ` ${footwearDesc}`;
+            }
+            if (data.socks_enabled) {
+                vestuario += `, usando meias do tipo ${data.socks_type} na cor ${data.socks_color || 'não especificada'}`;
+            }
             if (data.tipo_fotografia === 'modelo_vivo') {
                 promptPT += ` ${pronomePT} está ${vestuario.replace(/\s+/g, ' ').trim()}.`;
             } else if (data.tipo_fotografia === 'flat_lay') {
                 promptPT += ` O look é composto por: ${data.top} ${data.topColor || ''}, ${data.bottom} ${data.bottomColor || ''}`;
-                if (data.footwear && data.footwear !== 'descalço(a)') promptPT += `, ${data.footwear} ${data.footwearColor || ''}`;
+                if (data.footwear && data.footwear !== 'descalço(a)') {
+                    promptPT += `, ${data.footwear} ${data.footwearColor || ''}`;
+                }
                 promptPT += `.`;
             }
             if (data.footwear === 'descalço(a)') promptPT += ` ${pronomePT} está ${data.footwear}.`;
-
-            // Acessórios
             if (data.tipo_fotografia === 'modelo_vivo') {
                 const currentAccessoriesPT = Object.keys(accessories_pt).filter(key => data[key]).map(key => accessories_pt[key]);
                 if (currentAccessoriesPT.length > 0 || data.accessoryDetails) {
-                    let accessoryString = currentAccessoriesPT.length > 0 ? currentAccessoriesPT.join(', ') : '';
-                    if (data.accessoryDetails) accessoryString += ` (${data.accessoryDetails})`;
+                    let accessoryString = '';
+                    if (currentAccessoriesPT.length > 0) {
+                        accessoryString = currentAccessoriesPT.join(', ');
+                    }
+                    if (data.accessoryDetails) {
+                        accessoryString += ` (${data.accessoryDetails})`;
+                    }
                     promptPT += ` ${pronomePT} também está usando ${accessoryString.trim()}.`;
                 }
                 const poseInstruction = data.pose_custom ? data.pose_custom : data.pose;
                 promptPT += ` ${pronomePT} está ${poseInstruction}.`;
             }
-            
-            // Cenário
             if (data.scenario && data.tipo_fotografia !== 'flat_lay') {
                 promptPT += ` O cenário é uma ${data.scenario}`;
-                if (data.sceneObjects) promptPT += ` que inclui ${data.sceneObjects}`;
+                if (data.sceneObjects) {
+                    promptPT += ` que inclui ${data.sceneObjects}`;
+                }
                 if(data.scenario === 'estúdio com fundo branco' || data.scenario === 'estúdio com ciclorama (curva infinita)') {
-                    promptPT += `. DIREÇÃO DE ESTÚDIO PARA FUNDO BRANCO: O fundo deve ser um branco puro e infinito (ciclorama). A(O) modelo deve projetar sombras de contato suaves e realistas no chão e uma sombra difusa sutil na parede atrás de si. A direção, a intensidade e a suavidade dessas sombras devem corresponder EXATAMENTE à configuração de iluminação especificada, criando profundidade e um resultado profissional.`;
+                    promptPT += `.DIREÇÃO DE ESTÚDIO PARA FUNDO BRANCO: O fundo deve ser um branco puro e infinito (ciclorama).A(O) modelo deve projetar sombras de contato suaves e realistas no chão e uma sombra difusa sutil na parede atrás de si.A direção, a intensidade e a suavidade dessas sombras devem corresponder EXATAMENTE à configuração de iluminação especificada, criando profundidade e um resultado profissional.`;
                 }
             } else if (data.scenario && data.tipo_fotografia === 'flat_lay' && data.sceneObjects) {
                  promptPT += ` Objetos adicionais na composição do flat lay incluem ${data.sceneObjects}.`;
             }
-
-            // Direção de Fotografia
             promptPT += '\n\nDIREÇÃO DE FOTOGRAFIA: ';
             if (data.lighting) {
                 let lightingDesc = `A iluminação principal é ${data.lighting}`;
                 const currentLightingDetails = Object.keys(lighting_details_pt).filter(key => data[key]).map(key => lighting_details_pt[key]);
-                if (currentLightingDetails.length > 0) lightingDesc += `, complementada por ${currentLightingDetails.join(' e ')}`;
+                if (currentLightingDetails.length > 0) {
+                    lightingDesc += `, complementada por ${currentLightingDetails.join(' e ')}`;
+                }
                 promptPT += `${lightingDesc}.`;
             }
-            
             let techDetailsPT = [];
             if (data.photographer_style) techDetailsPT.push(data.photographer_style);
             if (data.photoAngle && data.tipo_fotografia !== 'flat_lay') {
@@ -921,22 +856,16 @@
             if (data.lensType) techDetailsPT.push(data.lensType);
             if (data.aperture) techDetailsPT.push(data.aperture);
             if (techDetailsPT.length > 0) promptPT += ` A direção fotográfica segue ${techDetailsPT.join(', ')}.`;
-
             if (data.quality) promptPT += ` O estilo da imagem é de ${data.quality}.`;
             if (data.post_processing) promptPT += ` O tratamento de cor e pós-produção deve seguir um estilo de ${data.post_processing}.`;
-
             let finalPromptPT = promptPT.replace(/, \./g, '.').replace(/ \./g, '.').replace(/ +/g, ' ').trim();
-            
-            // Detalhes de Realismo
             finalPromptPT += '\n\nDIREÇÃO DE REALISMO (DETALHES): ';
             if (data.tipo_fotografia === 'modelo_vivo') {
-                 finalPromptPT += `O penteado do cabelo deve ser ${data.hairstyle}, ${data.hairDetails}. A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_realism}. `;
+                 finalPromptPT += `O penteado do cabelo deve ser ${data.hairstyle}, ${data.hairDetails}.A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_realism}. `;
             }
             if (data.fabric_realism && data.fabric_realism !== 'padrão (foco na cor e forma)') {
                  finalPromptPT += `O tecido da roupa deve ter ${data.fabric_realism}.`;
             }
-            
-            // Restrições
             finalPromptPT += '\n\nCOMANDOS DE RESTRIÇÃO: ';
             let restrictions = [];
             if (data.footwear && data.footwear !== 'descalço(a)' && !data.shoeBrand) {
@@ -945,34 +874,35 @@
             if (!data.socks_enabled && data.footwear && data.footwear !== 'descalço(a)') {
                 restrictions.push(`A(O) modelo NÃO DEVE usar meias. Os tornozelos devem estar visíveis e descobertos.`);
             }
-            
             if(restrictions.length > 0) {
                  finalPromptPT += restrictions.join(' ');
             } else {
                 finalPromptPT = finalPromptPT.replace('COMANDOS DE RESTRIÇÃO: ', '');
+                // Remove o header se não houver restrições
             }
-
             portugueseTextarea.value = finalPromptPT;
-            
-            // CHAMA A TRADUÇÃO (Verificando se a função do módulo já carregou)
-            if (window.translatePortugueseToEnglish) {
-                debouncedTranslate(finalPromptPT);
-            } else {
-                console.log("Módulo de tradução ainda carregando...");
-                setTimeout(() => debouncedTranslate(finalPromptPT), 1000);
-            }
+            // A tradução agora chama a função segura
+            debouncedTranslate(finalPromptPT);
         }
-
-        // --- FUNÇÕES UTILITÁRIAS ---
+        // --- 3. Funções Auxiliares ---
         function copyPrompt(lang) {
             const textToCopy = document.getElementById(`prompt-${lang}`).value;
             if (!textToCopy) return;
-            navigator.clipboard.writeText(textToCopy).then(() => {
+            try {
+                const textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                textArea.style.position = 'fixed';
+                textArea.style.top = '-9999px';
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
                 copyMessage.classList.remove('opacity-0');
                 setTimeout(() => copyMessage.classList.add('opacity-0'), 2000);
-            }).catch(err => console.error('Falha ao copiar:', err));
+            } catch (err) {
+                console.error('Falha ao copiar:', err);
+            }
         }
-
         function debounce(func, delay) {
             let timeout;
             return function(...args) {
@@ -980,54 +910,124 @@
                 timeout = setTimeout(() => func.apply(this, args), delay);
             };
         }
-        
         function saveOrPrintPrompt() {
-            // (Função de impressão mantida idêntica à original para economizar espaço visual, mas funcional)
-             const data = Object.fromEntries(new FormData(form).entries());
+            const data = Object.fromEntries(new FormData(form).entries());
             let summaryHTML = `
-                <style>body{font-family:'Inter',sans-serif;padding:2rem}h1{color:#0891b2}pre{background:#f7f7f7;padding:1rem;white-space:pre-wrap}</style>
-                <h1>Resumo do Prompt</h1>
-                <h2>Prompts</h2>
-                <div><strong>PT:</strong><pre>${portugueseTextarea.value}</pre></div>
-                <div><strong>EN:</strong><pre>${englishTextarea.value}</pre></div>
+                <style>
+                    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #111; padding: 2rem;}
+                    h1 { font-size: 1.5rem; font-weight: bold; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem; color: #0891b2;}
+                    h2 { font-size: 1.2rem; font-weight: bold; margin-top: 1.5rem; color: #0e7490;}
+                    div { margin-bottom: 0.5rem;}
+                    strong { font-weight: bold; color: #333; }
+                    pre { background-color: #f7f7f7; padding: 1rem; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; font-family: monospace;}
+                </style>
+                <h1>Resumo do Prompt Gerado</h1>
             `;
+            // Prompts and Seed
+            summaryHTML += `
+                <h2>Prompts e Seed</h2>
+                <div><strong>Prompt em Português:</strong><pre>${portugueseTextarea.value}</pre></div>
+                <div><strong>Prompt em Inglês:</strong><pre>${englishTextarea.value}</pre></div>
+            `;
+            const seedValue = document.getElementById('imageSeed').value;
+            if (seedValue) {
+                summaryHTML += `<div><strong>Seed da Imagem (para Consistência):</strong> ${seedValue}</div>`;
+            }
+            // Resumo das seções
+            const sections = form.querySelectorAll('.accordion-item');
+            sections.forEach(section => {
+                const title = section.querySelector('.text-2xl').textContent;
+                summaryHTML += `<h2>${title}</h2>`;
+                const fields = section.querySelectorAll('select, input');
+                fields.forEach(field => {
+                     if (field.id === 'imageSeed' && field.type === 'number') return;
+                    if (field.type === 'checkbox' && field.checked) {
+                        const label = document.querySelector(`label[for='${field.id}']`).textContent;
+                        summaryHTML += `<div><strong>${label}:</strong> Sim</div>`;
+                    } else if (field.type !== 'checkbox' && field.value) {
+                         const label = document.querySelector(`label[for='${field.id}']`);
+                         if (label) {
+                            let labelText = label.textContent;
+                            let valueText = field.value;
+                            if (field.tagName.toLowerCase() === 'select') {
+                                valueText = field.options[field.selectedIndex].text;
+                            }
+                             summaryHTML += `<div><strong>${labelText}:</strong> ${valueText}</div>`;
+                        }
+                    }
+                });
+            });
             const printWindow = window.open('', '_blank');
             printWindow.document.write(summaryHTML);
             printWindow.document.close();
+            printWindow.focus();
             printWindow.print();
+            printWindow.close();
+        }
+        // NOVA FUNÇÃO DE TRADUÇÃO (CLIENT-SIDE GOOGLE TRANSLATE)
+        async function translatePortugueseToEnglish(portugueseText) {
+            if (!portugueseText.trim()) {
+                englishTextarea.value = '';
+                return;
+            }
+            
+            englishTextarea.value = 'Traduzindo...';
+            
+            try {
+                // Usando a API "gtx" do Google Translate que funciona diretamente no navegador
+                const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=pt&tl=en&dt=t&q=${encodeURIComponent(portugueseText)}`;
+                
+                const response = await fetch(url);
+                const result = await response.json();
+                
+                // O Google retorna um array de arrays, precisamos juntar as partes
+                if (result && result[0]) {
+                    const translatedText = result[0].map(item => item[0]).join('');
+                    englishTextarea.value = translatedText.trim();
+                } else {
+                    englishTextarea.value = "Erro na tradução.";
+                }
+            } catch (error) {
+                console.error('Erro na tradução:', error);
+                englishTextarea.value = 'Erro de Rede: Não foi possível traduzir. Verifique sua conexão.';
+            }
         }
         
-        // Debounces
         const debouncedGenerate = debounce(generatePrompts, 50);
-        const debouncedTranslate = debounce((text) => {
-            if(window.translatePortugueseToEnglish) window.translatePortugueseToEnglish(text);
-        }, 800);
-
+        // Usa a nova função de tradução segura
+        const debouncedTranslate = debounce(translatePortugueseToEnglish, 800);
         function applyScenarioSuggestions() {
             const selectedScenario = scenarioSelect.value;
             const suggestions = scenarioSuggestions[selectedScenario];
             if (suggestions) {
                 Object.keys(suggestions).forEach(key => {
                     const element = document.getElementById(key);
-                    if (element && key !== 'message') element.value = suggestions[key];
+                    if (element && key !== 'message') {
+                        element.value = suggestions[key];
+                    }
                 });
                 suggestionFeedback.textContent = `💡 ${suggestions.message}`;
                 suggestionFeedback.classList.remove('opacity-0');
-                setTimeout(() => suggestionFeedback.classList.add('opacity-0'), 3500);
+                setTimeout(() => {
+                    suggestionFeedback.classList.add('opacity-0');
+                }, 3500);
                 debouncedGenerate();
             }
         }
-
         function toggleModelSections() {
             const selection = tipoFotografiaSelect.value;
-            const display = selection === 'modelo_vivo' ? 'block' : 'none';
-            modeloAccordion.style.display = display;
-            acessoriosAccordion.style.display = display;
-            realismoAccordion.style.display = display;
+            if (selection === 'modelo_vivo') {
+                modeloAccordion.style.display = 'block';
+                acessoriosAccordion.style.display = 'block';
+                realismoAccordion.style.display = 'block';
+            } else {
+                modeloAccordion.style.display = 'none';
+                acessoriosAccordion.style.display = 'none';
+                realismoAccordion.style.display = 'none';
+            }
             debouncedGenerate();
         }
-
-        // --- EVENT LISTENERS ---
+        // --- 4. Event Listeners e Inicialização ---
         generateSeedBtn.addEventListener('click', () => {
             imageSeedInput.value = Math.floor(Math.random() * 999999999) + 1;
             debouncedGenerate();
@@ -1038,14 +1038,19 @@
             imageSeedInput.value = '';
             debouncedGenerate();
         });
-        inputs.forEach(input => input.addEventListener('input', debouncedGenerate));
+        inputs.forEach(input => {
+            input.addEventListener('input', debouncedGenerate);
+        });
         tipoFotografiaSelect.addEventListener('input', toggleModelSections);
         scenarioSelect.addEventListener('change', applyScenarioSuggestions);
-        portugueseTextarea.addEventListener('input', (e) => debouncedTranslate(e.target.value));
-
-        // Inicialização dos Acordeões
+        portugueseTextarea.addEventListener('input', (e) => {
+             // Apenas a tradução é chamada aqui, não a regeneração completa
+            debouncedTranslate(e.target.value)
+        });
+        // Lógica do Acordeão
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.accordion-toggle').forEach(accordion => {
+            const accordions = document.querySelectorAll('.accordion-toggle');
+            accordions.forEach(accordion => {
                 const content = accordion.nextElementSibling;
                 const icon = accordion.querySelector('svg');
                 if (content.classList.contains('collapsed-by-default')) {
@@ -1057,12 +1062,15 @@
                 accordion.addEventListener('click', () => {
                     const isCollapsed = content.style.maxHeight === '0px';
                     icon.classList.toggle('-rotate-180');
-                    content.style.maxHeight = isCollapsed ? content.scrollHeight + 'px' : '0px';
+                    if (isCollapsed) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    } else {
+                        content.style.maxHeight = '0px';
+                    }
                 });
             });
+            // Gera o prompt inicial ao carregar a página
             generatePrompts();
         });
     </script>
-
-</body>
-</html>
+</body></html>
