@@ -685,12 +685,12 @@
         </main>
     </div>
 
-    <script type="module">
+      <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
         // Importa a biblioteca Generative AI diretamente via ESM
         import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 
-        // Sua configuração do Firebase (usada aqui para inicializar e pegar a API Key)
+        // Sua configuração do Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyAoVJrxEAn-kgNG2NWbP-WGmx_5GxPTB2g",
             authDomain: "gerador-prompt-imagem.firebaseapp.com",
@@ -704,9 +704,11 @@
         console.log("Firebase inicializado.");
 
         // Inicializa o Gemini com a mesma API Key do Firebase
-        // ATENÇÃO: Certifique-se de que a "Generative Language API" esteja ativada no Google Cloud Console para esta chave.
         const genAI = new GoogleGenerativeAI(firebaseConfig.apiKey);
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        
+        // --- CORREÇÃO AQUI ---
+        // Mudamos de "gemini-pro" para "gemini-1.5-flash" que é a versão atual suportada
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         // Expõe a função de tradução globalmente para o script padrão usar
         window.translatePortugueseToEnglish = async function(portugueseText) {
@@ -717,7 +719,7 @@
                 return;
             }
 
-            englishTextarea.value = 'Traduzindo... (via Gemini API Direta)';
+            englishTextarea.value = 'Traduzindo... (via Gemini 1.5 Flash)';
 
             try {
                 // Prompt seguro para tradução técnica
@@ -730,11 +732,13 @@
                 englishTextarea.value = translatedText.trim();
             } catch (error) {
                 console.error('Erro na tradução Gemini:', error);
-                // Mensagem de erro amigável
+                
                 if (error.toString().includes("API key not valid")) {
                     englishTextarea.value = "Erro: Chave de API inválida ou API Gemini não ativada no console do Google Cloud.";
                 } else if (error.toString().includes("403")) {
                      englishTextarea.value = "Erro 403: Acesso negado. Verifique se a 'Generative Language API' está ativada no seu projeto Firebase/Google Cloud.";
+                } else if (error.toString().includes("404")) {
+                     englishTextarea.value = "Erro 404: Modelo não encontrado. Verifique o nome do modelo no código (atualmente gemini-1.5-flash).";
                 } else {
                     englishTextarea.value = `Erro ao traduzir: ${error.message || error}`;
                 }
