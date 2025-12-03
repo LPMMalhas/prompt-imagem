@@ -9,15 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        ::placeholder {
-            color: #6b7280;
-        }
-        .accordion-content {
-            transition: max-height 0.5s ease-in-out;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        ::placeholder { color: #6b7280; }
+        .accordion-content { transition: max-height 0.5s ease-in-out; }
     </style>
 </head>
 <body class="bg-gray-900 text-white antialiased">
@@ -29,7 +23,7 @@
         </header>
 
         <main class="max-w-4xl mx-auto space-y-12">
-            
+       
             <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
                 <form id="prompt-form" class="space-y-4">
 
@@ -288,7 +282,7 @@
                                 </div>
                                 <div class="sm:col-span-2">
                                     <label for="fabric_realism" class="block text-sm font-medium mb-1 text-gray-300">Realismo do Tecido</label>
-                                     <select id="fabric_realism" name="fabric_realism" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                    <select id="fabric_realism" name="fabric_realism" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
                                         <option value="padrão (foco na cor e forma)" selected title="Foco principal na cor e no caimento geral da peça.">Padrão (Foco na Cor e Forma)</option>
                                         <option value="textura do material visível (algodão, malha, etc.)" title="Instrui a IA a focar na renderização da trama e da textura do tecido.">Textura do Material Visível</option>
                                         <option value="vincos naturais e caimento realista" title="Garante que a roupa tenha dobras e amassados naturais onde o corpo se move.">Vincos Naturais e Caimento Realista</option>
@@ -430,18 +424,18 @@
                                 <div>
                                      <label for="makeup" class="block text-sm font-medium mb-1 text-gray-300">Maquiagem</label>
                                     <select id="makeup" name="makeup" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
-                                         <option value="com maquiagem natural" selected title="Maquiagem leve que realça a beleza natural, 'efeito acordei assim'.">Maquiagem Natural</option>
+                                        <option value="com maquiagem natural" selected title="Maquiagem leve que realça a beleza natural, 'efeito acordei assim'.">Maquiagem Natural</option>
                                          <option value="sem maquiagem" title="Rosto completamente limpo, sem produtos.">Sem Maquiagem</option>
                                          <option value="com maquiagem leve" title="Um pouco de base, rímel e batom neutro.">Maquiagem Leve</option>
                                          <option value="com delineado gráfico" title="Maquiagem com foco nos olhos, com um delineado moderno.">Delineado Gráfico</option>
                                          <option value="com sombra colorida" title="Maquiagem divertida com cores vibrantes nas pálpebras.">Sombra Colorida</option>
                                      </select>
-                                 </div>
+                                </div>
                                 <div class="sm:col-span-2">
                                     <label for="accessoryDetails" class="block text-sm font-medium mb-1 text-gray-300">Detalhes dos Acessórios</label>
                                     <input type="text" id="accessoryDetails" name="accessoryDetails" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: boné preto com logo branco, óculos de sol aviador">
                                  </div>
-                             </div>
+                            </div>
                         </div>
                     </div>
 
@@ -502,9 +496,9 @@
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
-                                    <label for="pose_custom" class="block text-sm font-medium mb-1 text-gray-300">Pose Personalizada (Opcional)</label>
+                                     <label for="pose_custom" class="block text-sm font-medium mb-1 text-gray-300">Pose Personalizada (Opcional)</label>
                                     <input type="text" id="pose_custom" name="pose_custom" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: sentada em um banco, de perfil (ignora o menu acima)">
-                                    <p class="text-xs text-gray-400 mt-1">Se preenchido, este campo substitui o menu "Pose da Modelo" acima.</p>
+                                     <p class="text-xs text-gray-400 mt-1">Se preenchido, este campo substitui o menu "Pose da Modelo" acima.</p>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <label for="face_realism" class="block text-sm font-medium mb-1 text-gray-300">Detalhes de Rosto (Realismo)</label>
@@ -521,7 +515,7 @@
 
                     <div class="accordion-item pb-4">
                         <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
-                             <span class="text-2xl font-bold text-cyan-300">Câmera & Estúdio</span>
+                            <span class="text-2xl font-bold text-cyan-300">Câmera & Estúdio</span>
                              <span id="suggestion-feedback" class="text-sm font-semibold text-yellow-400 opacity-0 transition-opacity duration-500"></span>
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                         </h3>
@@ -643,7 +637,7 @@
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
-                                    <label for="imageResolution" class="block text-sm font-medium mb-1 text-gray-300">Formato / Proporção da Imagem</label>
+                                     <label for="imageResolution" class="block text-sm font-medium mb-1 text-gray-300">Formato / Proporção da Imagem</label>
                                      <select id="imageResolution" name="imageResolution" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
                                         <option value="proporção 1:1 (quadrado)" title="Formato quadrado, ideal para posts de feed no Instagram.">1:1 (Quadrado)</option>
                                         <option value="proporção 4:5 (retrato)" title="Formato vertical, ideal para posts de feed no Instagram.">4:5 (Retrato Instagram)</option>
@@ -692,6 +686,25 @@
         </main>
     </div>
 
+    <script type="module">
+        // Importando as funções dos SDKs necessários (Versão 11.0.2 - Stable)
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAoVJrxEAn-kgNG2NWbP-WGmx_5GxPTB2g",
+            authDomain: "gerador-prompt-imagem.firebaseapp.com",
+            projectId: "gerador-prompt-imagem",
+            storageBucket: "gerador-prompt-imagem.firebasestorage.app",
+            messagingSenderId: "335512486472",
+            appId: "1:335512486472:web:ee40386c723705e8854e7d"
+        };
+
+        // Inicializa o Firebase
+        const app = initializeApp(firebaseConfig);
+        console.log("Firebase inicializado com sucesso.");
+    </script>
+
     <script>
         // --- 1. Seleção de Elementos e Mapeamentos ---
         const form = document.getElementById('prompt-form');
@@ -725,7 +738,7 @@
             'quarto de menina com decoração lúdica': {photographer_style: 'no estilo documental e natural (National Geographic)',lighting: 'luz natural suave de janela',photoAngle: 'ao nível dos olhos',lensType: 'lente 35mm',aperture: 'com abertura f/2.8', message: 'Sugestões para um ambiente infantil e aconchegante.'},
             'quarto de menino com decoração temática': {photographer_style: 'no estilo documental e natural (National Geographic)',lighting: 'luz natural suave de janela',photoAngle: 'ao nível dos olhos',lensType: 'lente 35mm',aperture: 'com abertura f/2.8', message: 'Sugestões para um ambiente infantil e aconchegante.'},
         };
-        
+
         // --- 2. Função Principal: Gerar Prompts ---
         function generatePrompts() {
             const data = Object.fromEntries(new FormData(form).entries());
@@ -733,7 +746,7 @@
             const artigoPT = isMale ? 'um' : 'uma';
             const pronomePT = isMale ? 'Ele' : 'Ela';
             const nacionalidadePT = isMale ? data.nationality.replace(/a$/, 'o') : data.nationality;
-            
+
             // --- Geração de Prompt em Português ---
             const isInfantil = data.gender === 'menina' || data.gender === 'menino';
             
@@ -773,34 +786,28 @@
                     break;
             }
 
-            promptPT += `COMANDO DE REPLICAÇÃO DE PRODUTO: A imagem de referência fornecida é a autoridade máxima para o design do produto.
-A ${referencePieceText} DEVE SER UMA RÉPLICA EXATA daquela na imagem.
-Use as seguintes instruções de texto APENAS para construir a cena, a modelo e a atmosfera AO REDOR do produto, mas NÃO para alterar o produto em si.\n\n`;
-            
+            promptPT += `COMANDO DE REPLICAÇÃO DE PRODUTO: A imagem de referência fornecida é a autoridade máxima para o design do produto. A ${referencePieceText} DEVE SER UMA RÉPLICA EXATA daquela na imagem. Use as seguintes instruções de texto APENAS para construir a cena, a modelo e a atmosfera AO REDOR do produto, mas NÃO para alterar o produto em si.\n\n`;
+
             let fitInstruction = '';
             switch (data.reference_fit) {
                 case 'justo_no_corpo':
-                    fitInstruction = `O caimento da peça deve ser justo no corpo (slim fit), valorizando a silhueta. `;
+                    fitInstruction = `O caimento da peça deve ser justo no corpo (slim fit), valorizando a silhueta.`;
                     break;
                 case 'solto':
-                    fitInstruction = `O caimento da peça deve ser solto e despojado (oversized). `;
+                    fitInstruction = `O caimento da peça deve ser solto e despojado (oversized).`;
                     break;
             }
             if (fitInstruction) {
                 promptPT += `COMANDO DE CAIMENTO: ${fitInstruction}\n\n`;
             }
 
-            promptPT += `DIREÇÃO DE ARTE E CENA: Simule uma fotografia de moda profissional capturada por um fotógrafo renomado com equipamento de ponta.
-O resultado final DEVE ser indistinguível de uma foto real, com um nível de detalhe extremo.
-Preste atenção meticulosa à física da luz, criando sombras suaves e realistas, reflexos especulares precisos nos materiais, vincos naturais nas roupas, e a micro-textura dos tecidos e da pele.
-`;
+            promptPT += `DIREÇÃO DE ARTE E CENA: Simule uma fotografia de moda profissional capturada por um fotógrafo renomado com equipamento de ponta. O resultado final DEVE ser indistinguível de uma foto real, com um nível de detalhe extremo. Preste atenção meticulosa à física da luz, criando sombras suaves e realistas, reflexos especulares precisos nos materiais, vincos naturais nas roupas, e a micro-textura dos tecidos e da pele. `;
 
 
             if (data.tipo_fotografia === 'modelo_vivo') {
                 if (isInfantil) {
                      const ecommerceType = 'infantil';
-                    promptPT += `A direção de arte é para e-commerce ${ecommerceType}.
-A imagem deve mostrar ${artigoPT} ${data.gender} ${nacionalidadePT}, com aproximadamente ${data.age ? data.age + ' anos' : 'a idade selecionada'}, com tom de pele ${data.skinTone}, ${data.makeup} e com uma expressão ${data.expression}.`;
+                     promptPT += `A direção de arte é para e-commerce ${ecommerceType}. A imagem deve mostrar ${artigoPT} ${data.gender} ${nacionalidadePT}, com aproximadamente ${data.age ? data.age + ' anos' : 'a idade selecionada'}, com tom de pele ${data.skinTone}, ${data.makeup} e com uma expressão ${data.expression}.`;
                 } else {
                     const ecommerceType = 'fitness';
                     promptPT += `A direção de arte é para e-commerce ${ecommerceType}.`;
@@ -812,13 +819,9 @@ A imagem deve mostrar ${artigoPT} ${data.gender} ${nacionalidadePT}, com aproxim
                 
                 promptPT += ` ${pronomePT} tem cabelo ${data.hairLength} ${data.hairType} ${data.hairColor}, e olhos ${data.eyeColor}.`;
             } else if (data.tipo_fotografia === 'manequim_fantasma') {
-                promptPT += `A foto deve usar a técnica de 'manequim fantasma' (ghost mannequin).
-A ${referencePieceText} deve ser fotografada em um fundo branco puro, mostrando a forma 3D, o caimento e o interior (gola/cintura) como se estivesse em um corpo invisível.
-A iluminação deve ser de estúdio, difusa e uniforme, sem sombras fortes.`;
+                promptPT += `A foto deve usar a técnica de 'manequim fantasma' (ghost mannequin). A ${referencePieceText} deve ser fotografada em um fundo branco puro, mostrando a forma 3D, o caimento e o interior (gola/cintura) como se estivesse em um corpo invisível. A iluminação deve ser de estúdio, difusa e uniforme, sem sombras fortes.`;
             } else if (data.tipo_fotografia === 'flat_lay') {
-                promptPT += `A foto deve ser um 'flat lay' (ângulo zenital/de cima).
-A ${referencePieceText} deve estar perfeitamente esticada e estilizada de forma limpa sobre uma superfície de ${data.scenario}.
-A iluminação deve ser ${data.lighting}, suave e uniforme, eliminando sombras fortes. A peça deve estar sem vincos e amassados.`;
+                promptPT += `A foto deve ser um 'flat lay' (ângulo zenital/de cima). A ${referencePieceText} deve estar perfeitamente esticada e estilizada de forma limpa sobre uma superfície de ${data.scenario}. A iluminação deve ser ${data.lighting}, suave e uniforme, eliminando sombras fortes. A peça deve estar sem vincos e amassados.`;
             }
 
 
@@ -853,7 +856,7 @@ A iluminação deve ser ${data.lighting}, suave e uniforme, eliminando sombras f
             }
 
             if (data.footwear === 'descalço(a)') promptPT += ` ${pronomePT} está ${data.footwear}.`;
-            
+
             if (data.tipo_fotografia === 'modelo_vivo') {
                 const currentAccessoriesPT = Object.keys(accessories_pt).filter(key => data[key]).map(key => accessories_pt[key]);
                 if (currentAccessoriesPT.length > 0 || data.accessoryDetails) {
@@ -877,10 +880,7 @@ A iluminação deve ser ${data.lighting}, suave e uniforme, eliminando sombras f
                     promptPT += ` que inclui ${data.sceneObjects}`;
                 }
                 if(data.scenario === 'estúdio com fundo branco' || data.scenario === 'estúdio com ciclorama (curva infinita)') {
-                    promptPT += `.
-DIREÇÃO DE ESTÚDIO PARA FUNDO BRANCO: O fundo deve ser um branco puro e infinito (ciclorama).
-A(O) modelo deve projetar sombras de contato suaves e realistas no chão e uma sombra difusa sutil na parede atrás de si.
-A direção, a intensidade e a suavidade dessas sombras devem corresponder EXATAMENTE à configuração de iluminação especificada, criando profundidade e um resultado profissional.`;
+                    promptPT += `. DIREÇÃO DE ESTÚDIO PARA FUNDO BRANCO: O fundo deve ser um branco puro e infinito (ciclorama). A(O) modelo deve projetar sombras de contato suaves e realistas no chão e uma sombra difusa sutil na parede atrás de si. A direção, a intensidade e a suavidade dessas sombras devem corresponder EXATAMENTE à configuração de iluminação especificada, criando profundidade e um resultado profissional.`;
                 }
             } else if (data.scenario && data.tipo_fotografia === 'flat_lay' && data.sceneObjects) {
                  promptPT += ` Objetos adicionais na composição do flat lay incluem ${data.sceneObjects}.`;
@@ -907,15 +907,15 @@ A direção, a intensidade e a suavidade dessas sombras devem corresponder EXATA
             if (data.lensType) techDetailsPT.push(data.lensType);
             if (data.aperture) techDetailsPT.push(data.aperture);
             if (techDetailsPT.length > 0) promptPT += ` A direção fotográfica segue ${techDetailsPT.join(', ')}.`;
+
             if (data.quality) promptPT += ` O estilo da imagem é de ${data.quality}.`;
             if (data.post_processing) promptPT += ` O tratamento de cor e pós-produção deve seguir um estilo de ${data.post_processing}.`;
-            
+
             let finalPromptPT = promptPT.replace(/, \./g, '.').replace(/ \./g, '.').replace(/ +/g, ' ').trim();
             
             finalPromptPT += '\n\nDIREÇÃO DE REALISMO (DETALHES): ';
             if (data.tipo_fotografia === 'modelo_vivo') {
-                 finalPromptPT += `O penteado do cabelo deve ser ${data.hairstyle}, ${data.hairDetails}.
-A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_realism}. `;
+                 finalPromptPT += `O penteado do cabelo deve ser ${data.hairstyle}, ${data.hairDetails}. A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_realism}. `;
             }
             if (data.fabric_realism && data.fabric_realism !== 'padrão (foco na cor e forma)') {
                  finalPromptPT += `O tecido da roupa deve ter ${data.fabric_realism}.`;
@@ -933,13 +933,12 @@ A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_rea
             if(restrictions.length > 0) {
                  finalPromptPT += restrictions.join(' ');
             } else {
-                finalPromptPT = finalPromptPT.replace('COMANDOS DE RESTRIÇÃO: ', '');
-                // Remove o header se não houver restrições
+                finalPromptPT = finalPromptPT.replace('COMANDOS DE RESTRIÇÃO: ', ''); // Remove o header se não houver restrições
             }
 
 
             portugueseTextarea.value = finalPromptPT;
-            // A tradução agora chama a função segura (Netlify Function)
+            // A tradução agora chama a função segura (Firebase Function)
             debouncedTranslate(finalPromptPT);
         }
 
@@ -984,12 +983,14 @@ A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_rea
                 </style>
                 <h1>Resumo do Prompt Gerado</h1>
             `;
+
             // Prompts and Seed
             summaryHTML += `
                 <h2>Prompts e Seed</h2>
                 <div><strong>Prompt em Português:</strong><pre>${portugueseTextarea.value}</pre></div>
                 <div><strong>Prompt em Inglês:</strong><pre>${englishTextarea.value}</pre></div>
             `;
+            
             const seedValue = document.getElementById('imageSeed').value;
             if (seedValue) {
                 summaryHTML += `<div><strong>Seed da Imagem (para Consistência):</strong> ${seedValue}</div>`;
@@ -1016,7 +1017,7 @@ A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_rea
                                 valueText = field.options[field.selectedIndex].text;
                             }
                              summaryHTML += `<div><strong>${labelText}:</strong> ${valueText}</div>`;
-                        }
+                         }
                     }
                 });
             });
@@ -1029,16 +1030,18 @@ A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_rea
             printWindow.close();
         }
 
-        // AQUI ESTÁ A NOVA FUNÇÃO QUE CHAMA A NETLIFY FUNCTION (PROXY SEGURO)
+        // AQUI ESTÁ A FUNÇÃO CORRIGIDA PARA O FIREBASE
         async function translatePortugueseToEnglish(portugueseText) {
             if (!portugueseText.trim()) {
                 englishTextarea.value = '';
                 return;
             }
             
-            // Endpoint para a Netlify Function.
-            const apiUrl = '/.netlify/functions/translate';
-            englishTextarea.value = 'Traduzindo... (via Netlify Function)';
+            // Endpoint Automático para a Cloud Function do Firebase
+            // Construído com base no Project ID do seu config: 'gerador-prompt-imagem'
+            const apiUrl = 'https://us-central1-gerador-prompt-imagem.cloudfunctions.net/translate';
+            
+            englishTextarea.value = 'Traduzindo... (via Firebase Cloud Functions)';
             
             try {
                 const response = await fetch(apiUrl, {
@@ -1049,7 +1052,7 @@ A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_rea
                     // Envia o prompt em português no corpo
                     body: JSON.stringify({ text: portugueseText })
                 });
-                
+
                 const result = await response.json();
 
                 if (response.ok) {
@@ -1057,18 +1060,18 @@ A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_rea
                     englishTextarea.value = result.translatedText.trim();
                 } else {
                     // Trata erros (400 ou 500) retornados pela Function
-                    englishTextarea.value = `Erro de Tradução: ${result.error || 'Falha ao conectar.'} Verifique a chave de API no Netlify.`;
+                    englishTextarea.value = `Erro de Tradução: ${result.error || 'Falha ao conectar.'} Verifique o Deploy da Função no Firebase.`;
                 }
             } catch (error) {
                 console.error('Erro na rede ou na chamada da Function:', error);
-                englishTextarea.value = 'Erro de Rede: Não foi possível chamar a função de tradução. O servidor está offline?';
+                englishTextarea.value = 'Erro de Rede: Não foi possível conectar ao Firebase. Verifique sua conexão e se a URL da Cloud Function está correta.';
             }
         }
         
         const debouncedGenerate = debounce(generatePrompts, 50);
         // Usa a nova função de tradução segura
-        const debouncedTranslate = debounce(translatePortugueseToEnglish, 800); 
-        
+        const debouncedTranslate = debounce(translatePortugueseToEnglish, 800);
+
         function applyScenarioSuggestions() {
             const selectedScenario = scenarioSelect.value;
             const suggestions = scenarioSuggestions[selectedScenario];
@@ -1116,9 +1119,11 @@ A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_rea
             imageSeedInput.value = '';
             debouncedGenerate();
         });
+
         inputs.forEach(input => {
             input.addEventListener('input', debouncedGenerate);
         });
+        
         tipoFotografiaSelect.addEventListener('input', toggleModelSections);
 
         scenarioSelect.addEventListener('change', applyScenarioSuggestions);
@@ -1127,7 +1132,7 @@ A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_rea
              // Apenas a tradução é chamada aqui, não a regeneração completa
             debouncedTranslate(e.target.value)
         });
-        
+
         // Lógica do Acordeão
         document.addEventListener('DOMContentLoaded', () => {
             const accordions = document.querySelectorAll('.accordion-toggle');
@@ -1146,7 +1151,7 @@ A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_rea
                     const isCollapsed = content.style.maxHeight === '0px';
                     icon.classList.toggle('-rotate-180');
                     if (isCollapsed) {
-                        content.style.maxHeight = content.scrollHeight + 'px';
+                         content.style.maxHeight = content.scrollHeight + 'px';
                     } else {
                         content.style.maxHeight = '0px';
                     }
