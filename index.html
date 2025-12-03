@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Prompts para E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        ::placeholder {
+            color: #6b7280;
+        }
+        .accordion-content {
+            transition: max-height 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white antialiased">
+
+    <div class="container mx-auto px-4 py-8 md:py-12">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Gerador de Prompts Profissional</h1>
+            <p class="mt-3 text-lg text-gray-400 max-w-3xl mx-auto">Crie prompts ultra-detalhados com controle granular para resultados perfeitos.</p>
+        </header>
+
+        <main class="max-w-4xl mx-auto space-y-12">
+            
+            <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
+                <form id="prompt-form" class="space-y-4">
+
+                    <div class="accordion-item border-b border-gray-700 pb-4">
+                        <h3 class="flex justify-between items-center py-2">
+                            <span class="text-2xl font-bold text-cyan-300">Tipo de Fotografia</span>
+                        </h3>
+                        <div class="pt-4">
+                            <div>
+                                <label for="tipo_fotografia" class="block text-sm font-medium mb-1 text-gray-300">Técnica de Captura</label>
+                                <select id="tipo_fotografia" name="tipo_fotografia" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    <option value="modelo_vivo" selected title="Focar em uma modelo (homem, mulher, criança) vestindo a peça.">Modelo Vivo</option>
+                                    <option value="manequim_fantasma" title="Foto 3D 'oca' da roupa, sem modelo ou manequim visível.">Manequim Fantasma (Ghost Mannequin)</option>
+                                    <option value="flat_lay" title="Foto de cima (zenital) da peça esticada sobre uma superfície plana.">Flat Lay (De Cima)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="modelo-accordion" class="accordion-item border-b border-gray-700 pb-4">
+                        <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
+                            <span class="text-2xl font-bold text-cyan-300">Modelo</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </h3>
+                        <div class="accordion-content overflow-hidden">
+                            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                <div>
+                                    <label for="gender" class="block text-sm font-medium mb-1 text-gray-300">Gênero</label>
+                                    <select id="gender" name="gender" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                        <option value="mulher" selected>Mulher</option>
+                                        <option value="homem">Homem</option>
+                                        <option value="menina">Menina</option>
+                                        <option value="menino">Menino</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="age" class="block text-sm font-medium mb-1 text-gray-300">Idade</label>
+                                    <input type="number" id="age" name="age" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: 25">
+                                </div>
+                                <div>
+                                    <label for="bodyType" class="block text-sm font-medium mb-1 text-gray-300">Tipo Físico</label>
+                                    <select id="bodyType" name="bodyType" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="atlético" selected title="Corpo tonificado, com músculos visíveis, comum em atletas.">Atlético</option>
+                                        <option value="definido" title="Músculos bem definidos e baixo percentual de gordura.">Definido</option>
+                                        <option value="curvilíneo" title="Corpo com curvas acentuadas, como quadris e busto maiores.">Curvilíneo</option>
+                                        <option value="padrão" title="Um biotipo mediano, sem características extremas.">Padrão</option>
+                                        <option value="magro" title="Estrutura corporal com pouca gordura e músculos menos aparentes.">Magro</option>
+                                        <option value="esguio" title="Corpo alongado e magro, frequentemente associado a modelos de passarela.">Esguio</option>
+                                        <option value="infantil padrão" title="Biotipo comum para a idade da criança selecionada.">Infantil Padrão</option>
+                                        <option value="infantil magro" title="Criança com estrutura corporal mais magra que a média.">Infantil Magro</option>
+                                        <option value="infantil robusto" title="Criança com estrutura corporal mais forte ou cheinha que a média.">Infantil Robusto</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="nationality" class="block text-sm font-medium mb-1 text-gray-300">Nacionalidade/Etnia</label>
+                                    <select id="nationality" name="nationality" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="brasileira" selected title="Traços mistos, comuns na população brasileira.">Brasileira</option>
+                                        <option value="africana" title="Pele escura, traços associados a diversas etnias africanas.">Africana</option>
+                                        <option value="americana" title="Aparência caucasiana, comum na América do Norte.">Americana (Caucasiana)</option>
+                                        <option value="latina" title="Traços hispânicos, comuns na América Latina.">Latina</option>
+                                        <option value="europeia" title="Traços caucasianos, comuns em países europeus.">Europeia</option>
+                                        <option value="nórdica" title="Pele clara, cabelos loiros e olhos claros, comum no norte da Europa.">Nórdica</option>
+                                        <option value="do leste asiático" title="Traços comuns em países como China, Japão e Coreia.">Leste Asiático</option>
+                                        <option value="indiana" title="Traços do subcontinente indiano.">Indiana</option>
+                                        <option value="árabe" title="Traços comuns no Oriente Médio e Norte da África.">Árabe</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="skinTone" class="block text-sm font-medium mb-1 text-gray-300">Tom de Pele</label>
+                                    <select id="skinTone" name="skinTone" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="pele morena clara" selected title="Tom de pele bronzeado claro, comum em populações latinas e mediterrâneas.">Morena Clara</option>
+                                        <option value="pele muito clara (branca)" title="Pele branca com pouca melanina, que se queima facilmente ao sol.">Muito Clara (Branca)</option>
+                                        <option value="pele clara (branca)" title="Pele branca, mas com um pouco mais de pigmentação.">Clara (Branca)</option>
+                                        <option value="pele morena escura" title="Tom de pele bronzeado escuro ou marrom claro.">Morena Escura</option>
+                                        <option value="pele negra" title="Tom de pele marrom escuro.">Negra</option>
+                                        <option value="pele negra (retinta)" title="Tom de pele negra bem escuro.">Negra (Retinta)</option>
+                                        <option value="pele asiática (amarela)" title="Tom de pele com fundo amarelado, comum em populações do leste asiático.">Asiática (Amarela)</option>
+                                    </select>
+                                </div>
+                                 <div>
+                                    <label for="expression" class="block text-sm font-medium mb-1 text-gray-300">Expressão Facial</label>
+                                    <select id="expression" name="expression" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="séria e confiante" selected title="Um olhar focado e seguro, comum em fotos de moda e esporte.">Séria e Confiante</option>
+                                        <option value="sorrindo" title="Um sorriso natural e convidativo.">Sorrindo</option>
+                                        <option value="alegre" title="Um sorriso largo e genuíno, expressando felicidade.">Alegre</option>
+                                        <option value="divertida" title="Expressão leve e brincalhona, talvez com uma piscadela.">Divertida</option>
+                                        <option value="olhar natural" title="Uma expressão neutra e relaxada, como se estivesse descontraída.">Olhar Natural</option>
+                                        <option value="intensa" title="Um olhar penetrante e focado, transmitindo força.">Intensa</option>
+                                        <option value="concentrada" title="Foco total, ideal para poses de ação como esportes ou ioga.">Concentrada</option>
+                                        <option value="pensativa" title="Olhar distante, como se estivesse perdida em pensamentos.">Pensativa</option>
+                                        <option value="olhar sereno e calmo" title="Expressão pacífica e tranquila.">Serena e Calma</option>
+                                        <option value="sorriso contido e elegante" title="Um leve sorriso, quase um segredo, comum em alta moda.">Sorriso Contido</option>
+                                        <option value="expressão de poder e determinação" title="Queixo levemente levantado, olhar firme.">Poder e Determinação</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="hairColor" class="block text-sm font-medium mb-1 text-gray-300">Cor do Cabelo</label>
+                                    <select id="hairColor" name="hairColor" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="castanho" selected>Castanho</option>
+                                        <option value="preto">Preto</option>
+                                        <option value="loiro">Loiro</option>
+                                        <option value="ruivo">Ruivo</option>
+                                        <option value="grisalho">Grisalho</option>
+                                        <option value="colorido (fantasia)">Colorido (Fantasia)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="hairType" class="block text-sm font-medium mb-1 text-gray-300">Tipo do Cabelo</label>
+                                    <select id="hairType" name="hairType" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="ondulado" selected>Ondulado</option>
+                                        <option value="liso">Liso</option>
+                                        <option value="cacheado">Cacheado</option>
+                                        <option value="crespo">Crespo</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="hairLength" class="block text-sm font-medium mb-1 text-gray-300">Comprimento do Cabelo</label>
+                                    <select id="hairLength" name="hairLength" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="longo" selected>Longo</option>
+                                        <option value="curto">Curto</option>
+                                        <option value="médio">Médio</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="hairstyle" class="block text-sm font-medium mb-1 text-gray-300">Penteado</label>
+                                    <select id="hairstyle" name="hairstyle" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="rabo de cavalo" selected title="Cabelo preso na parte de trás da cabeça.">Rabo de Cavalo</option>
+                                        <option value="solto" title="Cabelo sem prender, caindo naturalmente.">Solto</option>
+                                        <option value="coque" title="Cabelo enrolado e preso no topo ou atrás da cabeça.">Coque</option>
+                                        <option value="tranças" title="Cabelo entrelaçado em tranças.">Tranças</option>
+                                        <option value="trança embutida" title="Trança feita rente ao couro cabeludo.">Trança Embutida</option>
+                                        <option value="cabelo molhado" title="Aparência de cabelo úmido, comum em fotos de verão ou esporte.">Efeito Molhado</option>
+                                        <option value="afro puff" title="Penteado para cabelos crespos, preso no topo da cabeça.">Afro Puff</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="eyeColor" class="block text-sm font-medium mb-1 text-gray-300">Cor dos Olhos</label>
+                                    <select id="eyeColor" name="eyeColor" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="castanhos" selected>Castanhos</option>
+                                        <option value="azuis">Azuis</option>
+                                        <option value="verdes">Verdes</option>
+                                        <option value="pretos">Pretos</option>
+                                        <option value="cor de mel">Cor de Mel</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-b border-gray-700 pb-4">
+                        <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
+                            <span class="text-2xl font-bold text-cyan-300">Vestuário e Cena</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </h3>
+                        <div class="accordion-content overflow-hidden">
+                            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="sm:col-span-1">
+                                    <label for="reference_piece" class="block text-sm font-medium mb-1 text-gray-300">Peça de Referência Principal</label>
+                                    <select id="reference_piece" name="reference_piece" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" title="Selecione qual peça de roupa é o foco principal e deve ser idêntica à sua imagem de referência.">
+                                        <option value="geral" selected title="A IA focará na peça de roupa mais proeminente.">Nenhuma / Foco Geral</option>
+                                        <option value="conjunto_completo" title="Instrui a IA que o look inteiro (partes de cima E de baixo) deve ser replicado.">Conjunto Completo / Look Inteiro</option>
+                                        <option value="parte_de_cima" title="Instrui a IA que a parte de cima (camiseta, top, etc.) é a peça a ser replicada fielmente.">Parte de Cima</option>
+                                        <option value="parte_de_baixo" title="Instrui a IA que a parte de baixo (calça, saia, etc.) é a peça a ser replicada fielmente.">Parte de Baixo</option>
+                                        <option value="peca_unica" title="Use para vestidos, macacões, etc., indicando que a peça única é a referência.">Peça Única (Vestido/Macacão)</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-1">
+                                    <label for="reference_fit" class="block text-sm font-medium mb-1 text-gray-300">Caimento da Peça de Referência</label>
+                                    <select id="reference_fit" name="reference_fit" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" title="Especifique como a peça principal deve vestir no corpo da(o) modelo.">
+                                        <option value="" selected title="A IA tentará replicar o caimento original da peça.">Padrão (Caimento Original)</option>
+                                        <option value="justo_no_corpo" title="Instrui a IA a renderizar a peça com um caimento bem ajustado ao corpo.">Justo no Corpo (Slim Fit)</option>
+                                        <option value="solto" title="Instrui a IA a renderizar a peça com um caimento mais largo e despojado.">Solto / Oversized</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="top" class="block text-sm font-medium mb-1 text-gray-300">Tipo (Parte de Cima)</label>
+                                    <select id="top" name="top" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="top fitness" selected title="Top justo para atividades físicas.">Top Fitness</option>
+                                        <option value="top nadador" title="Top com costas estilo nadador, para alta sustentação.">Top Nadador</option>
+                                        <option value="top de alça fina" title="Top com alças finas e delicadas.">Top de Alça Fina</option>
+                                        <option value="top transpassado" title="Top com faixas que se cruzam na frente ou nas costas.">Top Transpassado</option>
+                                        <option value="top um ombro só" title="Top assimétrico que cobre apenas um ombro.">Top Um Ombro Só</option>
+                                        <option value="regata fitness" title="Regata com tecido leve para treinos.">Regata Fitness</option>
+                                        <option value="camiseta dry-fit" title="Camiseta com tecnologia que absorve o suor.">Camiseta Dry-Fit</option>
+                                        <option value="camiseta" title="Camiseta de algodão ou outro material casual.">Camiseta Casual</option>
+                                        <option value="cropped" title="Blusa mais curta, que deixa parte da barriga à mostra.">Cropped</option>
+                                        <option value="body" title="Peça única que veste o tronco, pode ser casual ou esportiva.">Body</option>
+                                        <option value="camisa polo" title="Camisa com gola, casual ou esportiva.">Camisa Polo</option>
+                                        <option value="camisa social" title="Camisa de botão, para looks formais.">Camisa Social</option>
+                                        <option value="blusa de manga curta" title="Blusa casual com mangas curtas.">Blusa Manga Curta</option>
+                                        <option value="blusa de manga longa" title="Blusa casual com mangas longas.">Blusa Manga Longa</option>
+                                        <option value="moletom com capuz" title="Blusa de moletom com capuz, para um look casual ou esportivo.">Moletom com Capuz</option>
+                                        <option value="jaqueta corta-vento" title="Jaqueta fina e leve, ideal para corrida.">Jaqueta Corta-Vento</option>
+                                        <option value="jaqueta bomber" title="Jaqueta curta com elástico na cintura e punhos.">Jaqueta Bomber</option>
+                                        <option value="jaqueta" title="Jaqueta casual, como jeans ou de couro sintético.">Jaqueta</option>
+                                        <option value="blazer" title="Casaco mais formal, para looks elegantes.">Blazer</option>
+                                        <option value="vestido" title="Peça única que cobre o corpo, pode ser casual ou infantil.">Vestido</option>
+                                        <option value="macacão" title="Peça única que cobre o tronco e as pernas.">Macacão</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="topColor" class="block text-sm font-medium mb-1 text-gray-300">Cor (Parte de Cima)</label>
+                                    <input type="text" id="topColor" name="topColor" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: Preto">
+                                </div>
+                                 <div>
+                                    <label for="printType" class="block text-sm font-medium mb-1 text-gray-300">Estampa (Parte de Cima)</label>
+                                    <select id="printType" name="printType" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="lisa" selected title="Cor única, sem estampas.">Lisa</option>
+                                        <option value="com estampa floral" title="Padrão com flores.">Estampa Floral</option>
+                                        <option value="com estampa geométrica" title="Padrão com formas como linhas, triângulos, etc.">Estampa Geométrica</option>
+                                        <option value="listrada" title="Padrão de listras horizontais ou verticais.">Listrada</option>
+                                        <option value="xadrez" title="Padrão clássico de linhas que se cruzam.">Xadrez</option>
+                                        <option value="animal print" title="Estampa que imita pele de animais (onça, zebra, etc.).">Animal Print</option>
+                                        <option value="tie-dye" title="Efeito de tingimento manchado e colorido.">Tie-Dye</option>
+                                        <option value="poá" title="Estampa clássica de bolinhas.">Poá (Bolinhas)</option>
+                                        <option value="camuflada" title="Estampa militar.">Camuflada</option>
+                                        <option value="com estampa de personagem" title="Desenho de personagem de desenho animado ou filme.">Estampa de Personagem</option>
+                                        <option value="com estampa de logo (minimalista)" title="Pequeno logo discreto no peito ou barra.">Estampa Logo (Minimalista)</option>
+                                        <option value="com estampa de logo (grande)" title="Logo grande e centralizado no peito.">Estampa Logo (Grande)</option>
+                                        <option value="com estampa de texto" title="Frase ou palavra estampada.">Estampa de Texto</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="clothingDetails" class="block text-sm font-medium mb-1 text-gray-300">Detalhes Adicionais da Parte de Cima</label>
+                                    <input type="text" id="clothingDetails" name="clothingDetails" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: com detalhes em tela nas costas">
+                                </div>
+                                <div>
+                                    <label for="bottom" class="block text-sm font-medium mb-1 text-gray-300">Parte de Baixo</label>
+                                    <select id="bottom" name="bottom" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="calça legging" selected title="Calça justa e elástica, ideal para treinos.">Calça Legging</option>
+                                        <option value="legging com bolso lateral" title="Calça legging com bolso na lateral da perna.">Legging com Bolso Lateral</option>
+                                        <option value="legging com recortes" title="Calça legging com recortes em tela ou vazados.">Legging com Recortes</option>
+                                        <option value="bermuda ciclista" title="Bermuda justa acima do joelho.">Bermuda Ciclista</option>
+                                        <option value="bermuda ciclista com bolso" title="Bermuda justa com bolso na lateral, para celular ou chaves.">Bermuda Ciclista com Bolso</option>
+                                        <option value="shortsaia" title="Shorts com uma camada de saia por cima.">Shortsaia</option>
+                                        <option value="shorts de corrida" title="Shorts soltinho e curto para corrida.">Shorts de Corrida</option>
+                                        <option value="calça de moletom" title="Calça confortável de moletom.">Calça de Moletom</option>
+                                        <option value="calça jogger" title="Calça de moletom mais justa no tornozelo, estilo esportivo/casual.">Calça Jogger</option>
+                                        <option value="calça jeans" title="Calça de denim, para looks casuais.">Calça Jeans</option>
+                                        <option value="calça cargo" title="Calça larga com bolsos laterais.">Calça Cargo</option>
+                                        <option value="calça de alfaiataria" title="Calça de tecido com corte mais formal.">Calça de Alfaiataria</option>
+                                        <option value="bermuda" title="Bermuda casual.">Bermuda</option>
+                                        <option value="shorts" title="Shorts casual, como jeans ou de tecido.">Shorts</option>
+                                        <option value="saia" title="Saia casual ou infantil.">Saia</option>
+                                        <option value="saia plissada" title="Saia com dobras finas.">Saia Plissada</option>
+                                        <option value="saia midi" title="Saia com comprimento abaixo do joelho.">Saia Midi</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="bottomColor" class="block text-sm font-medium mb-1 text-gray-300">Cor (Parte de Baixo)</label>
+                                    <input type="text" id="bottomColor" name="bottomColor" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: Rosa neon">
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="bottomClothingDetails" class="block text-sm font-medium mb-1 text-gray-300">Detalhes Adicionais da Parte de Baixo</label>
+                                    <input type="text" id="bottomClothingDetails" name="bottomClothingDetails" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: com filete lateral, cintura alta, recortes em tela">
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="fabric_realism" class="block text-sm font-medium mb-1 text-gray-300">Realismo do Tecido</label>
+                                     <select id="fabric_realism" name="fabric_realism" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="padrão (foco na cor e forma)" selected title="Foco principal na cor e no caimento geral da peça.">Padrão (Foco na Cor e Forma)</option>
+                                        <option value="textura do material visível (algodão, malha, etc.)" title="Instrui a IA a focar na renderização da trama e da textura do tecido.">Textura do Material Visível</option>
+                                        <option value="vincos naturais e caimento realista" title="Garante que a roupa tenha dobras e amassados naturais onde o corpo se move.">Vincos Naturais e Caimento Realista</option>
+                                        <option value="costuras, bainhas e fios nítidos (nível macro)" title="Pede um nível de detalhe extremo, mostrando a construção da peça.">Costuras e Bainhas Nítidas (Nível Macro)</option>
+                                        <option value="textura, vincos e costuras (realismo total)" title="Combina todas as opções para o máximo de detalhe no produto.">TODOS OS DETALHES (Realismo Total)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="footwear" class="block text-sm font-medium mb-1 text-gray-300">Calçado</label>
+                                    <select id="footwear" name="footwear" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="tênis esportivo" selected title="Tênis projetado para atividades físicas.">Tênis Esportivo</option>
+                                        <option value="tênis de corrida" title="Tênis com amortecimento, performance.">Tênis de Corrida</option>
+                                        <option value="tênis casual" title="Tênis para uso diário, focado em estilo.">Tênis Casual</option>
+                                        <option value="tênis de skate" title="Tênis de sola reta (flat).">Tênis de Skate</option>
+                                        <option value="tênis de cano alto" title="Tênis que cobre o tornozelo (high-top).">Tênis de Cano Alto</option>
+                                        <option value="coturno" title="Bota robusta, de estilo militar.">Coturno</option>
+                                        <option value="sapatos" title="Calçado social ou formal.">Sapatos</option>
+                                        <option value="scarpin" title="Sapato de salto alto e bico fino.">Scarpin</option>
+                                        <option value="sandálias" title="Calçado aberto para o verão.">Sandálias</option>
+                                        <option value="papete" title="Sandália com tiras largas e solado robusto.">Papete</option>
+                                        <option value="sapatilhas" title="Calçado baixo e delicado.">Sapatilhas</option>
+                                        <option value="mocassim" title="Sapato baixo sem cadarços, casual-chique.">Mocassim</option>
+                                        <option value="botas" title="Calçado fechado que cobre o tornozelo.">Botas</option>
+                                        <option value="chinelos" title="Calçado informal para descanso.">Chinelos</option>
+                                        <option value="descalço(a)" title="Sem nenhum calçado.">Descalço(a)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="footwearColor" class="block text-sm font-medium mb-1 text-gray-300">Cor (Calçado)</label>
+                                    <input type="text" id="footwearColor" name="footwearColor" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: Branco com detalhes cinza">
+                                </div>
+                                <div class="sm:col-span-2">
+                                     <label for="shoeBrand" class="block text-sm font-medium mb-1 text-gray-300">Marca (Calçado)</label>
+                                    <input type="text" id="shoeBrand" name="shoeBrand" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: Nike, Adidas (deixe em branco para sem marca)">
+                                </div>
+                                <div class="sm:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+                                    <div class="flex items-center pt-5">
+                                        <input id="socks_enabled" name="socks_enabled" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                        <label for="socks_enabled" class="ml-3 block text-sm font-medium text-gray-300">Usando Meias?</label>
+                                    </div>
+                                    <div>
+                                        <label for="socks_type" class="block text-sm font-medium mb-1 text-gray-300">Tipo da Meia</label>
+                                        <select id="socks_type" name="socks_type" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                            <option value="soquete" title="Meia curta que fica na altura do tornozelo.">Soquete</option>
+                                            <option value="invisível" title="Meia muito curta que não aparece para fora do calçado.">Invisível</option>
+                                            <option value="cano médio" title="Meia que cobre o tornozelo e parte da canela.">Cano Médio</option>
+                                            <option value="cano alto" title="Meia que vai até o meio da canela ou joelho.">Cano Alto</option>
+                                            <option value="esportiva" title="Meia de material atoalhado, geralmente para esportes.">Esportiva</option>
+                                            <option value="social" title="Meia fina, geralmente de poliamida.">Social</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="socks_color" class="block text-sm font-medium mb-1 text-gray-300">Cor da Meia</label>
+                                        <input type="text" id="socks_color" name="socks_color" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: Branca com listras pretas">
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="scenario" class="block text-sm font-medium mb-1 text-gray-300">Cenário</label>
+                                    <select id="scenario" name="scenario" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="academia moderna com equipamentos" selected title="Ambiente interno de academia com equipamentos ao fundo.">Academia Moderna</option>
+                                        <option value="estúdio com fundo branco" title="Fundo infinito branco, limpo e profissional.">Estúdio (Fundo Branco)</option>
+                                        <option value="estúdio com ciclorama (curva infinita)" title="Fundo de estúdio profissional com curva suave entre chão e parede, totalmente branco.">Estúdio com Ciclorama (Branco)</option>
+                                        <option value="estúdio com fundo colorido" title="Fundo liso de uma cor vibrante ou pastel.">Estúdio (Fundo Colorido)</option>
+                                        <option value="estúdio minimalista com tons claros" title="Ambiente de estúdio clean, com paredes e chão em tons de branco, cinza claro ou bege.">Estúdio Minimalista (Tons Claros)</option>
+                                        <option value="pista de corrida ao ar livre" title="Pista de atletismo ou calçadão para corrida.">Pista de Corrida</option>
+                                        <option value="estúdio de ioga minimalista" title="Ambiente calmo e claro, com poucos elementos.">Estúdio de Ioga</option>
+                                        <option value="quadra de basquete" title="Cenário esportivo urbano.">Quadra de Basquete</option>
+                                        <option value="trilha na floresta" title="Caminho em meio à natureza, com árvores e vegetação.">Trilha na Floresta</option>
+                                        <option value="parque urbano ensolarado" title="Parque com gramado, árvores e luz do sol.">Parque Urbano</option>
+                                        <option value="jardim florido com luz suave" title="Cenário externo com muitas flores e iluminação difusa.">Jardim Florido</option>
+                                        <option value="praia ao pôr do sol" title="Cenário litorâneo com a luz quente do fim de tarde.">Praia ao Pôr do Sol</option>
+                                        <option value="rua urbana moderna" title="Cidade com arquitetura moderna e movimento.">Rua Urbana</option>
+                                        <option value="cafeteria aconchegante" title="Ambiente interno charmoso com decoração de café.">Cafeteria</option>
+                                        <option value="sala de estar moderna e iluminada" title="Interior de uma casa com decoração contemporânea e boa iluminação natural.">Sala de Estar Moderna</option>
+                                        <option value="quarto de menina com decoração lúdica" title="Cenário de um quarto infantil feminino, com brinquedos e decoração temática.">Quarto de Menina</option>
+                                        <option value="quarto de menino com decoração temática" title="Cenário de um quarto infantil masculino, com brinquedos e decoração temática.">Quarto de Menino</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="sceneObjects" class="block text-sm font-medium mb-1 text-gray-300">Objetos Adicionais na Cena</label>
+                                    <input type="text" id="sceneObjects" name="sceneObjects" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: halteres, bola de futebol, ursinho de pelúcia">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="acessorios-accordion" class="accordion-item border-b border-gray-700 pb-4">
+                        <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
+                            <span class="text-2xl font-bold text-cyan-300">Acessórios e Detalhes</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </h3>
+                        <div class="accordion-content overflow-hidden collapsed-by-default">
+                            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Acessórios</label>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div class="flex items-center">
+                                            <input id="acc_cap" name="acc_cap" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="acc_cap" class="ml-3 block text-sm font-medium text-gray-300" title="Boné esportivo ou casual.">Boné</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="acc_sunglasses" name="acc_sunglasses" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="acc_sunglasses" class="ml-3 block text-sm font-medium text-gray-300" title="Óculos para proteção solar.">Óculos de Sol</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="acc_watch" name="acc_watch" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="acc_watch" class="ml-3 block text-sm font-medium text-gray-300" title="Relógio com visor digital, para monitorar atividades.">Relógio Esportivo</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="acc_headphones" name="acc_headphones" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="acc_headphones" class="ml-3 block text-sm font-medium text-gray-300" title="Fones de ouvido, sobre a orelha ou intra-auriculares.">Fones de Ouvido</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="acc_glasses" name="acc_glasses" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="acc_glasses" class="ml-3 block text-sm font-medium text-gray-300" title="Óculos com lente de grau.">Óculos de Grau</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="acc_hat" name="acc_hat" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="acc_hat" class="ml-3 block text-sm font-medium text-gray-300" title="Chapéu casual, como um bucket hat ou de palha.">Chapéu</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="acc_necklace" name="acc_necklace" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="acc_necklace" class="ml-3 block text-sm font-medium text-gray-300" title="Joia ou bijuteria para o pescoço.">Colar</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="acc_earrings" name="acc_earrings" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="acc_earrings" class="ml-3 block text-sm font-medium text-gray-300" title="Brincos, pequenos ou grandes.">Brincos</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="acc_backpack" name="acc_backpack" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="acc_backpack" class="ml-3 block text-sm font-medium text-gray-300" title="Mochila casual ou esportiva.">Mochila</label>
+                                        </div>
+                                         <div class="flex items-center">
+                                            <input id="acc_viseira" name="acc_viseira" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="acc_viseira" class="ml-3 block text-sm font-medium text-gray-300" title="Acessório para proteger o rosto do sol, aberto em cima.">Viseira</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                     <label for="makeup" class="block text-sm font-medium mb-1 text-gray-300">Maquiagem</label>
+                                    <select id="makeup" name="makeup" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                         <option value="com maquiagem natural" selected title="Maquiagem leve que realça a beleza natural, 'efeito acordei assim'.">Maquiagem Natural</option>
+                                         <option value="sem maquiagem" title="Rosto completamente limpo, sem produtos.">Sem Maquiagem</option>
+                                         <option value="com maquiagem leve" title="Um pouco de base, rímel e batom neutro.">Maquiagem Leve</option>
+                                         <option value="com delineado gráfico" title="Maquiagem com foco nos olhos, com um delineado moderno.">Delineado Gráfico</option>
+                                         <option value="com sombra colorida" title="Maquiagem divertida com cores vibrantes nas pálpebras.">Sombra Colorida</option>
+                                     </select>
+                                 </div>
+                                <div class="sm:col-span-2">
+                                    <label for="accessoryDetails" class="block text-sm font-medium mb-1 text-gray-300">Detalhes dos Acessórios</label>
+                                    <input type="text" id="accessoryDetails" name="accessoryDetails" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: boné preto com logo branco, óculos de sol aviador">
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <div id="realismo-accordion" class="accordion-item border-b border-gray-700 pb-4">
+                        <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
+                            <span class="text-2xl font-bold text-cyan-300">Realismo e Pose</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </h3>
+                        <div class="accordion-content overflow-hidden collapsed-by-default">
+                            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="skinTexture" class="block text-sm font-medium mb-1 text-gray-300">Textura da Pele</label>
+                                    <select id="skinTexture" name="skinTexture" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="pele com textura natural e um leve brilho de suor" selected title="Ideal para fotos fitness, mostrando o esforço do treino.">Textura com Brilho de Suor</option>
+                                        <option value="pele com textura natural e poros visíveis" title="Pele realista, sem filtros ou edições pesadas.">Textura Natural com Poros</option>
+                                        <option value="pele com micro-texturas visíveis" title="Detalhes finos como linhas de expressão sutis, para máximo realismo.">Micro-texturas Visíveis</option>
+                                        <option value="pele com brilho natural (glowy)" title="Pele hidratada e iluminada, muito usada em fotos de beleza.">Pele com Brilho (Glowy)</option>
+                                        <option value="pele oleosa com reflexos especulares" title="Brilho de oleosidade em áreas como testa e nariz, para um look pós-treino.">Pele Oleosa com Reflexos</option>
+                                        <option value="pele com efeito matte" title="Pele sem brilho, com acabamento opaco.">Pele Matte</option>
+                                        <option value="pele lisa e suave, sem imperfeições" title="Pele 'perfeita', como em campanhas de cosméticos.">Lisa e Suave</option>
+                                        <option value="pele com sardas leves e realistas" title="Adiciona um toque de naturalidade e personalidade.">Sardas Leves</option>
+                                        <option value="pele com sardas pronunciadas" title="Sardas mais evidentes no rosto e ombros, para um look mais marcante.">Sardas Pronunciadas</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="hairDetails" class="block text-sm font-medium mb-1 text-gray-300">Detalhes do Cabelo</label>
+                                    <select id="hairDetails" name="hairDetails" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="cabelo com fios soltos e realistas" selected title="Pequenos fios fora do lugar, dando um ar mais natural.">Fios Soltos (Flyaway)</option>
+                                        <option value="fios de cabelo individuais visíveis" title="Nível de detalhe extremo, onde fios separados podem ser vistos contra a luz.">Fios Individuais Visíveis</option>
+                                        <option value="cabelo com frizz realista" title="Pequenos fios arrepiados, adicionando um toque de naturalidade pós-treino.">Frizz Realista</option>
+                                        <option value="cabelo com reflexos de luz naturais" title="Mechas sutilmente mais claras, como se fossem queimadas de sol.">Reflexos Naturais de Luz</option>
+                                        <option value="cabelo com volume e movimento" title="Cabelo que parece estar em movimento, com mais corpo.">Volume e Movimento</option>
+                                        <option value="cabelo brilhante e sedoso" title="Cabelo com aparência saudável e bem cuidado.">Brilhante e Sedoso</option>
+                                        <option value="cabelo perfeitamente penteado" title="Sem nenhum fio fora do lugar, para um look polido.">Perfeitamente Penteado</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="pose" class="block text-sm font-medium mb-1 text-gray-300">Pose da Modelo</label>
+                                    <select id="pose" name="pose" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="em uma pose de ação, correndo" selected title="Movimento dinâmico de corrida.">Ação: Correndo</option>
+                                        <option value="saltando no ar com expressão de alegria" title="Captura um momento de pura energia e felicidade.">Ação: Saltando</option>
+                                        <option value="fazendo uma pose de ioga" title="Postura de equilíbrio ou flexibilidade de ioga.">Ação: Pose de Ioga</option>
+                                        <option value="levantando um peso" title="Movimento de musculação, com halteres ou barra.">Ação: Levantando Peso</option>
+                                        <option value="alongando o corpo" title="Esticando um músculo, antes ou depois do treino.">Ação: Alongando</option>
+                                        <option value="agachada, olhando para a câmera" title="Pose de poder, comum em fotos esportivas e urbanas.">Ação: Agachada</option>
+                                        <option value="interagindo com um objeto (bola, peso, etc.)" title="Pose dinâmica que adiciona contexto à cena, interagindo com itens do cenário.">Ação: Interagindo com Objeto</option>
+                                        <option value="em uma pose de moda fitness" title="Pose que valoriza o corpo e a roupa, com contração muscular.">Moda: Pose Fitness</option>
+                                        <option value="em uma pose de moda natural" title="Pose relaxada e estilosa, como em um editorial.">Moda: Pose Natural</option>
+                                        <option value="mão na cintura" title="Pose clássica que transmite confiança.">Moda: Mão na Cintura</option>
+                                        <option value="pose de herói (mãos na cintura, peito estufado)" title="Transmite força, confiança e poder.">Moda: Pose de Herói</option>
+                                        <option value="de costas, olhando para trás por cima do ombro" title="Pose clássica de moda, misteriosa e elegante.">Moda: De Costas, Olhando para Trás</option>
+                                        <option value="olhando por cima do ombro" title="Pose que cria um ar de mistério e elegância.">Moda: Olhando por Cima do Ombro</option>
+                                        <option value="andando casualmente" title="Movimento de caminhada, natural e descontraído.">Casual: Andando</option>
+                                        <option value="olhando diretamente para a câmera" title="Conexão direta com o espectador.">Casual: Olhando para Câmera</option>
+                                        <option value="sentada de forma relaxada" title="Sentada em um banco, escada ou no chão.">Casual: Sentada</option>
+                                        <option value="sentada no chão com as pernas cruzadas" title="Pose casual, relaxada e introspectiva.">Casual: Sentada de Pernas Cruzadas</option>
+                                        <option value="apoiada em uma parede" title="Pose urbana e despojada.">Casual: Apoiada na Parede</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="pose_custom" class="block text-sm font-medium mb-1 text-gray-300">Pose Personalizada (Opcional)</label>
+                                    <input type="text" id="pose_custom" name="pose_custom" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Ex: sentada em um banco, de perfil (ignora o menu acima)">
+                                    <p class="text-xs text-gray-400 mt-1">Se preenchido, este campo substitui o menu "Pose da Modelo" acima.</p>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="face_realism" class="block text-sm font-medium mb-1 text-gray-300">Detalhes de Rosto (Realismo)</label>
+                                    <select id="face_realism" name="face_realism" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="padrão (expressão clara)" selected title="Foco principal na expressão facial definida.">Padrão (Expressão Clara)</option>
+                                        <option value="rosto com micro-expressões sutis" title="Adiciona realismo com movimentos musculares faciais quase imperceptíveis.">Micro-expressões Sutis</option>
+                                        <option value="olhos com reflexo de luz de estúdio (catchlight)" title="Instrui a IA a adicionar um reflexo da fonte de luz nos olhos, aumentando o realismo.">Reflexo de Luz (Catchlight) nos Olhos</option>
+                                        <option value="leve assimetria facial natural" title="Evita o 'rosto de IA' perfeitamente simétrico, tornando-o mais humano.">Leve Assimetria Natural</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item pb-4">
+                        <h3 class="accordion-toggle flex justify-between items-center cursor-pointer py-2">
+                             <span class="text-2xl font-bold text-cyan-300">Câmera & Estúdio</span>
+                             <span id="suggestion-feedback" class="text-sm font-semibold text-yellow-400 opacity-0 transition-opacity duration-500"></span>
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </h3>
+                        <div class="accordion-content overflow-hidden collapsed-by-default">
+                             <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="sm:col-span-2">
+                                     <label for="photographer_style" class="block text-sm font-medium mb-1 text-gray-300">Estilo do Fotógrafo / Direção de Arte</label>
+                                     <select id="photographer_style" name="photographer_style" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="no estilo de uma fotografia de moda editorial (Vogue, Elle)" selected title="Simula a estética, o tratamento de imagem e as poses de editoriais de alta moda.">Moda Editorial (Vogue)</option>
+                                        <option value="no estilo de um retrato cinematográfico" title="Iluminação dramática, cores ricas e uma atmosfera que parece tirada de um filme.">Retrato Cinematográfico</option>
+                                         <option value="no estilo de fotografia de lifestyle comercial" title="Fotos vibrantes e aspiracionais, como em um anúncio de revista.">Lifestyle Comercial</option>
+                                         <option value="no estilo documental e natural (National Geographic)" title="Captura um momento realista e espontâneo, com luz natural.">Documental / Natural</option>
+                                         <option value="no estilo de fotografia fine art" title="Abordagem artística, com composições e iluminação conceituais.">Fine Art</option>
+                                     </select>
+                                 </div>
+                                <div class="sm:col-span-2">
+                                    <label for="lighting" class="block text-sm font-medium mb-1 text-gray-300">Iluminação Principal</label>
+                                    <select id="lighting" name="lighting" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="luz natural suave de janela" title="Cria uma iluminação suave e direcional, ideal para retratos.">Luz Natural de Janela</option>
+                                        <option value="golden hour (luz dourada do fim de tarde)" title="Luz quente e dourada do amanhecer/pôr do sol, cria sombras longas e suaves.">Golden Hour</option>
+                                        <option value="luz de meio-dia forte" title="Luz dura e direta, cria sombras fortes e alto contraste.">Luz de Meio-Dia</option>
+                                        <option value="dia nublado (luz difusa)" title="Luz uniforme e suave, sem sombras fortes, ótima para cores fiéis.">Dia Nublado (Luz Difusa)</option>
+                                        <option value="iluminação de três pontos" title="Configuração clássica com luz principal, de preenchimento e contra-luz para modelar o rosto.">Estúdio: Três Pontos</option>
+                                        <option value="iluminação borboleta (butterfly)" title="Cria uma sombra em forma de borboleta sob o nariz, clássica para glamour.">Estúdio: Butterfly</option>
+                                        <option value="iluminação rembrandt" title="Cria um triângulo de luz na bochecha sombreada, efeito dramático e artístico.">Estúdio: Rembrandt</option>
+                                        <option value="iluminação de estúdio com softbox principal" selected title="Fonte de luz grande e difusa que cria uma iluminação suave e uniforme, ideal para e-commerce.">Estúdio: Softbox Principal</option>
+                                        <option value="luz de anel (ring light)" title="Luz circular que cria um brilho nos olhos e elimina sombras frontais.">Estúdio: Ring Light</option>
+                                        <option value="luz de neon" title="Cria um ambiente moderno e colorido, com brilhos vibrantes.">Luz de Neon</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Detalhes de Iluminação (Opcional)</label>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div class="flex items-center">
+                                            <input id="light_rim" name="light_rim" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="light_rim" class="ml-3 block text-sm font-medium text-gray-300" title="Uma luz de fundo que contorna o modelo, separando-o do cenário.">Contra-luz (Rim Light)</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="light_reflector" name="light_reflector" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="light_reflector" class="ml-3 block text-sm font-medium text-gray-300" title="Usa uma superfície para rebater a luz e preencher sombras indesejadas.">Uso de Rebatedor</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input id="light_gobo" name="light_gobo" type="checkbox" class="h-4 w-4 rounded border-gray-600 bg-gray-800 text-cyan-500 focus:ring-cyan-600">
+                                            <label for="light_gobo" class="ml-3 block text-sm font-medium text-gray-300" title="Usa um objeto para criar padrões de luz e sombra (ex: sombra de janela).">Uso de Gobo</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="photoAngle" class="block text-sm font-medium mb-1 text-gray-300">Ângulo da Foto</label>
+                                    <select id="photoAngle" name="photoAngle" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="ao nível dos olhos" selected title="Ângulo neutro e direto, conecta o espectador com o modelo.">Nível dos Olhos</option>
+                                        <option value="de baixo para cima (low angle)" title="Faz o modelo parecer mais alto, imponente e poderoso.">Ângulo Baixo</option>
+                                        <option value="de cima para baixo (high angle)" title="Faz o modelo parecer menor, pode criar uma sensação de vulnerabilidade ou fofura.">Ângulo Alto</option>
+                                        <option value="vista de pássaro (bird's-eye view)" title="Tirada diretamente de cima, oferece uma perspectiva única da cena.">Vista de Pássaro</option>
+                                        <option value="vista de verme (worm's-eye view)" title="Tirada de um ponto muito baixo no chão, maximiza a altura e o drama.">Vista de Verme</option>
+                                        <option value="com plano holandês" title="Câmera inclinada, cria uma sensação de dinamismo, tensão ou desorientação.">Plano Holandês (Inclinado)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="cameraType" class="block text-sm font-medium mb-1 text-gray-300">Tipo de Câmera</label>
+                                    <select id="cameraType" name="cameraType" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="DSLR" selected title="Câmera digital profissional, conhecida pela qualidade e versatilidade.">DSLR</option>
+                                        <option value="Mirrorless" title="Mais compacta que a DSLR, com qualidade de imagem profissional similar.">Mirrorless</option>
+                                        <option value="câmera de médio formato" title="Sensor maior para detalhes extremos e altíssima resolução, usada em alta moda.">Médio Formato</option>
+                                        <option value="câmera de filme 35mm" title="Para um visual analógico, com granulação e cores características de filme.">Filme 35mm</option>
+                                        <option value="fotografia de smartphone profissional" title="Simula a estética de fotos de alta qualidade tiradas com smartphones modernos.">Smartphone Profissional</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="lensType" class="block text-sm font-medium mb-1 text-gray-300">Tipo de Lente</label>
+                                    <select id="lensType" name="lensType" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="lente 35mm" title="Grande angular moderada, ótima para capturar o modelo e um pouco do ambiente.">35mm (Grande Angular)</option>
+                                        <option value="lente 50mm" selected title="Conhecida como 'lente normal', se assemelha à visão humana. Muito versátil.">50mm (Padrão)</option>
+                                        <option value="lente 85mm" title="Lente de retrato clássica, cria um belo desfoque de fundo (bokeh).">85mm (Retrato)</option>
+                                        <option value="lente 100mm macro" title="Para closes extremos, capturando detalhes minúsculos de tecidos e texturas.">100mm (Macro)</option>
+                                        <option value="lente teleobjetiva (200mm)" title="Comprime o fundo, isolando o modelo de forma dramática. Ideal para esportes.">200mm (Teleobjetiva)</option>
+                                        <option value="lente olho de peixe (fisheye)" title="Cria uma distorção esférica, para um efeito estilizado e único.">Olho de Peixe (Fisheye)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="aperture" class="block text-sm font-medium mb-1 text-gray-300">Abertura</label>
+                                    <select id="aperture" name="aperture" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="com abertura f/1.4" title="Abertura máxima, cria um desfoque de fundo extremamente suave e intenso.">f/1.4 (Desfoque Máximo)</option>
+                                        <option value="com abertura f/1.8" title="Muito popular para retratos, oferece um desfoque de fundo acentuado.">f/1.8 (Desfoque Intenso)</option>
+                                        <option value="com abertura f/2.8" selected title="Versátil, bom equilíbrio entre desfoque de fundo e nitidez do modelo.">f/2.8 (Desfoque Moderado)</option>
+                                        <option value="com abertura f/4" title="Mantém o modelo nítido e o fundo com um leve desfoque.">f/4 (Fundo Mais Nítido)</option>
+                                        <option value="com abertura f/8" title="Garante alta nitidez em todo o corpo do modelo, com fundo mais visível.">f/8 (Alta Nitidez)</option>
+                                        <option value="com abertura f/16" title="Praticamente tudo em foco, do primeiro plano ao fundo. Menos comum para retratos.">f/16 (Tudo em Foco)</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="imageSeed" class="block text-sm font-medium mb-1 text-gray-300" title="Use o mesmo 'Seed' em prompts diferentes para manter as características da modelo consistentes entre as imagens.">Seed da Imagem (para Consistência)</label>
+                                    <div class="flex gap-2">
+                                        <input type="number" id="imageSeed" name="imageSeed" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg" placeholder="Clique em 'Gerar' para um novo seed">
+                                        <button type="button" id="generate-seed-btn" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-lg">Gerar</button>
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="quality" class="block text-sm font-medium mb-1 text-gray-300">Qualidade e Estilo</label>
+                                    <select id="quality" name="quality" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="fotorrealismo extremo (8K, nível macro), detalhes nítidos, qualidade de lente prime" selected title="Exige o máximo de resolução, nitidez de lente e detalhes de micro-textura.">Fotorrealismo Extremo (8K, Lente Prime)</option>
+                                        <option value="foco nítido, com profundidade de campo rasa" title="Instrui a IA a manter o modelo em foco perfeito com um fundo suavemente desfocado.">Foco Nítido, Fundo Desfocado</option>
+                                        <option value="renderização de 16 bits (micro-contraste e gradientes suaves)" title="Simula um arquivo RAW para gradientes de cor perfeitos e nitidez de borda.">Renderização 16 bits (Micro-contraste)</option>
+                                        <option value="com iluminação volumétrica e estilo cinematográfico" title="Cria raios de luz visíveis (quando aplicável) e uma atmosfera de cinema.">Iluminação Volumétrica, Cinematográfica</option>
+                                        <option value="com alta fidelidade de cor e cores vibrantes" title="Pede cores ricas e saturadas, com renderização precisa.">Alta Fidelidade, Cores Vibrantes</option>
+                                        <option value="qualidade ótica perfeita (sem aberração cromática, sem distorção)" title="Pede uma imagem tecnicamente perfeita, como se fosse de uma lente master prime.">Qualidade Ótica Perfeita</option>
+                                        <option value="grão de filme sutil (estilo analógico)" title="Adiciona uma leve granulação de filme, quebrando a perfeição digital e aumentando o realismo.">Grão de Filme Sutil (Analógico)</option>
+                                        <option value="bokeh suave e cremoso (fundo desfocado)" title="Cria um desfoque de fundo de alta qualidade, típico de lentes prime caras.">Bokeh Suave e Cremoso</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="post_processing" class="block text-sm font-medium mb-1 text-gray-300">Pós-Produção / Tratamento de Cor</label>
+                                     <select id="post_processing" name="post_processing" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="cores realistas e fiéis ao produto (fidelidade sRGB)" selected title="Prioriza a precisão da cor, como exigido para e-commerce.">Cores Realistas (Fidelidade sRGB)</option>
+                                        <option value="tratamento comercial (vibrante e nítido)" title="Aumenta a saturação e o contraste para uma imagem 'pop'.">Comercial (Vibrante e Nítido)</option>
+                                        <option value="tratamento editorial (dessaturado e moody)" title="Cores menos saturadas e sombras mais profundas, para um visual de revista.">Editorial (Dessaturado/Moody)</option>
+                                        <option value="tratamento cinematográfico (tons ricos)" title="Grão sutil, cores estilizadas (ex: tons de laranja e azul).">Cinematográfico (Tons Ricos)</option>
+                                        <option value="sem pós-produção visível (look natural)" title="Imagem limpa, como se saísse direto da câmera.">Look Natural (Sem Retoque)</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label for="imageResolution" class="block text-sm font-medium mb-1 text-gray-300">Formato / Proporção da Imagem</label>
+                                     <select id="imageResolution" name="imageResolution" class="w-full p-2 bg-gray-800 border border-gray-700 rounded-lg">
+                                        <option value="proporção 1:1 (quadrado)" title="Formato quadrado, ideal para posts de feed no Instagram.">1:1 (Quadrado)</option>
+                                        <option value="proporção 4:5 (retrato)" title="Formato vertical, ideal para posts de feed no Instagram.">4:5 (Retrato Instagram)</option>
+                                        <option value="proporção 9:16 (story)" title="Formato vertical alto, para Stories, Reels e TikTok.">9:16 (Story/Reels)</option>
+                                        <option value="proporção 16:9 (widescreen)" title="Formato horizontal, para banners de site e thumbnails de vídeo.">16:9 (Widescreen)</option>
+                                        <option value="proporção 3:2 (padrão foto)" title="Proporção clássica de câmeras DSLR.">3:2 (Padrão Câmera)</option>
+                                        <option value="proporção 2:3 (retrato foto)" title="Versão vertical da proporção de câmera.">2:3 (Retrato Câmera)</option>
+                                        <option value="resolução 1080x1080px" title="Resolução exata para um quadrado de alta qualidade.">1080x1080px</option>
+                                        <option value="resolução 1080x1920px" title="Resolução Full HD vertical, padrão para stories.">1080x1920px</option>
+                                        <option value="" selected>Não especificar</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
+                <h2 class="text-2xl font-bold mb-4 text-cyan-300">Prompts Gerados</h2>
+                
+                <div class="mb-6">
+                    <label class="block text-lg font-semibold mb-2 text-gray-200">Prompt em Português (Editável)</label>
+                    <textarea id="prompt-pt" rows="8" class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg font-mono text-gray-300 focus:ring-2 focus:ring-cyan-500 focus:outline-none"></textarea>
+                    <button onclick="copyPrompt('pt')" class="mt-2 w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-lg transition duration-200">Copiar</button>
+                </div>
+
+                <div>
+                    <label class="block text-lg font-semibold mb-2 text-gray-200">Prompt in English (Automático)</label>
+                    <textarea id="prompt-en" rows="8" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg font-mono text-gray-300" readonly></textarea>
+                    <button onclick="copyPrompt('en')" class="mt-2 w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-lg transition duration-200">Copiar</button>
+                </div>
+
+                <div id="copy-message" class="mt-4 text-center text-green-400 font-semibold opacity-0 transition-opacity duration-300">
+                    Prompt copiado!
+                </div>
+                <div class="mt-6 flex flex-col sm:flex-row gap-4">
+                     <button id="clear-button" class="w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200">
+                        Limpar Tudo
+                    </button>
+                    <button id="print-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200">
+                        Salvar / Imprimir Prompt
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // --- 1. Seleção de Elementos e Mapeamentos ---
+        const form = document.getElementById('prompt-form');
+        const clearButton = document.getElementById('clear-button');
+        const printButton = document.getElementById('print-button');
+        const copyMessage = document.getElementById('copy-message');
+        const portugueseTextarea = document.getElementById('prompt-pt');
+        const englishTextarea = document.getElementById('prompt-en');
+        const generateSeedBtn = document.getElementById('generate-seed-btn');
+        const imageSeedInput = document.getElementById('imageSeed');
+        const inputs = Array.from(form.elements);
+        const tipoFotografiaSelect = document.getElementById('tipo_fotografia');
+        const modeloAccordion = document.getElementById('modelo-accordion');
+        const acessoriosAccordion = document.getElementById('acessorios-accordion');
+        const realismoAccordion = document.getElementById('realismo-accordion');
+        const accessories_pt = { acc_cap: 'boné', acc_sunglasses: 'óculos de sol', acc_watch: 'relógio esportivo', acc_headphones: 'fones de ouvido', acc_glasses: 'óculos de grau', acc_hat: 'chapéu', acc_necklace: 'colar', acc_earrings: 'brincos', acc_backpack: 'mochila', acc_viseira: 'viseira' };
+        const lighting_details_pt = { light_rim: 'contra-luz (rim light) para recortar a silhueta', light_reflector: 'uso de rebatedor para suavizar sombras', light_gobo: 'uso de gobo para criar padrões de sombra' };
+        const scenarioSelect = document.getElementById('scenario');
+        const suggestionFeedback = document.getElementById('suggestion-feedback');
+        
+        const scenarioSuggestions = {
+            'academia moderna com equipamentos': {photographer_style: 'no estilo de fotografia de lifestyle comercial',lighting: 'iluminação de estúdio com softbox principal',photoAngle: 'de baixo para cima (low angle)',lensType: 'lente 50mm', message: 'Sugestões para foto de ação em academia.'},
+            'estúdio com fundo branco': {photographer_style: 'no estilo de uma fotografia de moda editorial (Vogue, Elle)',lighting: 'iluminação de estúdio com softbox principal',photoAngle: 'ao nível dos olhos',lensType: 'lente 85mm',aperture: 'com abertura f/8', message: 'Setup clássico de estúdio para e-commerce.'},
+            'estúdio com ciclorama (curva infinita)': {photographer_style: 'no estilo de uma fotografia de moda editorial (Vogue, Elle)',lighting: 'iluminação de estúdio com softbox principal',photoAngle: 'ao nível dos olhos',lensType: 'lente 85mm',aperture: 'com abertura f/8', message: 'Setup profissional para fundo infinito.'},
+            'estúdio com fundo colorido': {photographer_style: 'no estilo de uma fotografia de moda editorial (Vogue, Elle)',lighting: 'iluminação de três pontos',photoAngle: 'ao nível dos olhos',lensType: 'lente 85mm',aperture: 'com abertura f/5.6', message: 'Setup de estúdio para um look vibrante.'},
+            'estúdio minimalista com tons claros': {photographer_style: 'no estilo de fotografia fine art',lighting: 'luz natural suave de janela',photoAngle: 'ao nível dos olhos',lensType: 'lente 50mm',aperture: 'com abertura f/2.8', message: 'Sugestões para um look clean e minimalista.'},
+            'pista de corrida ao ar livre': {photographer_style: 'no estilo de fotografia de lifestyle comercial',lighting: 'golden hour (luz dourada do fim de tarde)',photoAngle: 'de baixo para cima (low angle)',lensType: 'lente teleobjetiva (200mm)',aperture: 'com abertura f/4', message: 'Sugestões para foto de corrida dinâmica.'},
+            'estúdio de ioga minimalista': {photographer_style: 'no estilo documental e natural (National Geographic)',lighting: 'luz natural suave de janela',photoAngle: 'ao nível dos olhos',lensType: 'lente 35mm',aperture: 'com abertura f/2.8', message: 'Setup para uma atmosfera calma e serena.'},
+            'parque urbano ensolarado': {photographer_style: 'no estilo de fotografia de lifestyle comercial',lighting: 'golden hour (luz dourada do fim de tarde)',photoAngle: 'ao nível dos olhos',lensType: 'lente 85mm',aperture: 'com abertura f/1.8', message: 'Sugestões para um retrato casual ao ar livre.'},
+            'rua urbana moderna': {photographer_style: 'no estilo de uma fotografia de moda editorial (Vogue, Elle)',lighting: 'dia nublado (luz difusa)',photoAngle: 'ao nível dos olhos',lensType: 'lente 35mm',aperture: 'com abertura f/4', message: 'Setup ideal para street style.'},
+            'quarto de menina com decoração lúdica': {photographer_style: 'no estilo documental e natural (National Geographic)',lighting: 'luz natural suave de janela',photoAngle: 'ao nível dos olhos',lensType: 'lente 35mm',aperture: 'com abertura f/2.8', message: 'Sugestões para um ambiente infantil e aconchegante.'},
+            'quarto de menino com decoração temática': {photographer_style: 'no estilo documental e natural (National Geographic)',lighting: 'luz natural suave de janela',photoAngle: 'ao nível dos olhos',lensType: 'lente 35mm',aperture: 'com abertura f/2.8', message: 'Sugestões para um ambiente infantil e aconchegante.'},
+        };
+        
+        // --- 2. Função Principal: Gerar Prompts ---
+        function generatePrompts() {
+            const data = Object.fromEntries(new FormData(form).entries());
+            const isMale = data.gender === 'menino' || data.gender === 'homem';
+            const artigoPT = isMale ? 'um' : 'uma';
+            const pronomePT = isMale ? 'Ele' : 'Ela';
+            const nacionalidadePT = isMale ? data.nationality.replace(/a$/, 'o') : data.nationality;
+            
+            // --- Geração de Prompt em Português ---
+            const isInfantil = data.gender === 'menina' || data.gender === 'menino';
+            
+            let promptPT = '';
+
+            let technicalCommands = '';
+            if (data.imageSeed) {
+                technicalCommands += `--seed ${data.imageSeed} `;
+            }
+            if (data.imageResolution) {
+                const ratioMatch = data.imageResolution.match(/(\d+:\d+)/);
+                if (ratioMatch && ratioMatch[1]) {
+                    technicalCommands += `--aspect_ratio ${ratioMatch[1]} `;
+                }
+            }
+            if(technicalCommands) {
+                promptPT += `COMANDO TÉCNICO PRIMÁRIO: ${technicalCommands}\n\n`;
+            }
+
+            if (data.tipo_fotografia === 'modelo_vivo') {
+                 promptPT += 'COMANDO DE ENQUADRAMENTO: A imagem DEVE ser um plano de corpo inteiro (full-body shot), mostrando a(o) modelo da cabeça aos pés, sem cortar nenhuma parte do corpo ou do calçado.\n\n';
+            }
+            
+            let referencePieceText = 'A peça de roupa principal';
+            switch (data.reference_piece) {
+                case 'conjunto_completo':
+                    referencePieceText = 'O conjunto completo (partes de cima e de baixo)';
+                    break;
+                case 'parte_de_cima':
+                    referencePieceText = 'parte de cima (camiseta, top, etc.)';
+                    break;
+                case 'parte_de_baixo':
+                    referencePieceText = 'parte de baixo (calça, saia, etc.)';
+                    break;
+                case 'peca_unica':
+                    referencePieceText = 'peça única (vestido, macacão, etc.)';
+                    break;
+            }
+
+            promptPT += `COMANDO DE REPLICAÇÃO DE PRODUTO: A imagem de referência fornecida é a autoridade máxima para o design do produto.
+A ${referencePieceText} DEVE SER UMA RÉPLICA EXATA daquela na imagem.
+Use as seguintes instruções de texto APENAS para construir a cena, a modelo e a atmosfera AO REDOR do produto, mas NÃO para alterar o produto em si.\n\n`;
+            
+            let fitInstruction = '';
+            switch (data.reference_fit) {
+                case 'justo_no_corpo':
+                    fitInstruction = `O caimento da peça deve ser justo no corpo (slim fit), valorizando a silhueta. `;
+                    break;
+                case 'solto':
+                    fitInstruction = `O caimento da peça deve ser solto e despojado (oversized). `;
+                    break;
+            }
+            if (fitInstruction) {
+                promptPT += `COMANDO DE CAIMENTO: ${fitInstruction}\n\n`;
+            }
+
+            promptPT += `DIREÇÃO DE ARTE E CENA: Simule uma fotografia de moda profissional capturada por um fotógrafo renomado com equipamento de ponta.
+O resultado final DEVE ser indistinguível de uma foto real, com um nível de detalhe extremo.
+Preste atenção meticulosa à física da luz, criando sombras suaves e realistas, reflexos especulares precisos nos materiais, vincos naturais nas roupas, e a micro-textura dos tecidos e da pele.
+`;
+
+
+            if (data.tipo_fotografia === 'modelo_vivo') {
+                if (isInfantil) {
+                     const ecommerceType = 'infantil';
+                    promptPT += `A direção de arte é para e-commerce ${ecommerceType}.
+A imagem deve mostrar ${artigoPT} ${data.gender} ${nacionalidadePT}, com aproximadamente ${data.age ? data.age + ' anos' : 'a idade selecionada'}, com tom de pele ${data.skinTone}, ${data.makeup} e com uma expressão ${data.expression}.`;
+                } else {
+                    const ecommerceType = 'fitness';
+                    promptPT += `A direção de arte é para e-commerce ${ecommerceType}.`;
+                    let modelDescription = ` A modelo é ${artigoPT} ${data.gender || ''} ${nacionalidadePT} de ${data.age ? data.age + ' anos' : ''}`;
+                    modelDescription += ` com corpo ${data.bodyType} e tom de pele ${data.skinTone}`;
+                    modelDescription += `, ${data.makeup}, com expressão ${data.expression}.`;
+                    promptPT += modelDescription;
+                }
+                
+                promptPT += ` ${pronomePT} tem cabelo ${data.hairLength} ${data.hairType} ${data.hairColor}, e olhos ${data.eyeColor}.`;
+            } else if (data.tipo_fotografia === 'manequim_fantasma') {
+                promptPT += `A foto deve usar a técnica de 'manequim fantasma' (ghost mannequin).
+A ${referencePieceText} deve ser fotografada em um fundo branco puro, mostrando a forma 3D, o caimento e o interior (gola/cintura) como se estivesse em um corpo invisível.
+A iluminação deve ser de estúdio, difusa e uniforme, sem sombras fortes.`;
+            } else if (data.tipo_fotografia === 'flat_lay') {
+                promptPT += `A foto deve ser um 'flat lay' (ângulo zenital/de cima).
+A ${referencePieceText} deve estar perfeitamente esticada e estilizada de forma limpa sobre uma superfície de ${data.scenario}.
+A iluminação deve ser ${data.lighting}, suave e uniforme, eliminando sombras fortes. A peça deve estar sem vincos e amassados.`;
+            }
+
+
+            let vestuario = `vestindo um ${data.top} ${data.topColor || ''} ${data.printType}`;
+            if (data.clothingDetails) vestuario += `, ${data.clothingDetails}`;
+            vestuario += `, ${data.bottom} ${data.bottomColor || ''}`;
+            if(data.bottomClothingDetails) vestuario += `, ${data.bottomClothingDetails}`;
+            
+            let footwearDesc = '';
+            if (data.footwear && data.footwear !== 'descalço(a)') {
+                footwearDesc = `e calçando ${data.footwear} ${data.footwearColor || ''}`;
+                if (data.shoeBrand) {
+                    footwearDesc += ` da marca ${data.shoeBrand}`;
+                }
+            }
+            if (footwearDesc) {
+                 vestuario += ` ${footwearDesc}`;
+            }
+
+            if (data.socks_enabled) {
+                vestuario += `, usando meias do tipo ${data.socks_type} na cor ${data.socks_color || 'não especificada'}`;
+            }
+
+            if (data.tipo_fotografia === 'modelo_vivo') {
+                promptPT += ` ${pronomePT} está ${vestuario.replace(/\s+/g, ' ').trim()}.`;
+            } else if (data.tipo_fotografia === 'flat_lay') {
+                promptPT += ` O look é composto por: ${data.top} ${data.topColor || ''}, ${data.bottom} ${data.bottomColor || ''}`;
+                if (data.footwear && data.footwear !== 'descalço(a)') {
+                    promptPT += `, ${data.footwear} ${data.footwearColor || ''}`;
+                }
+                promptPT += `.`;
+            }
+
+            if (data.footwear === 'descalço(a)') promptPT += ` ${pronomePT} está ${data.footwear}.`;
+            
+            if (data.tipo_fotografia === 'modelo_vivo') {
+                const currentAccessoriesPT = Object.keys(accessories_pt).filter(key => data[key]).map(key => accessories_pt[key]);
+                if (currentAccessoriesPT.length > 0 || data.accessoryDetails) {
+                    let accessoryString = '';
+                    if (currentAccessoriesPT.length > 0) {
+                        accessoryString = currentAccessoriesPT.join(', ');
+                    }
+                    if (data.accessoryDetails) {
+                        accessoryString += ` (${data.accessoryDetails})`;
+                    }
+                    promptPT += ` ${pronomePT} também está usando ${accessoryString.trim()}.`;
+                }
+
+                const poseInstruction = data.pose_custom ? data.pose_custom : data.pose;
+                promptPT += ` ${pronomePT} está ${poseInstruction}.`;
+            }
+            
+            if (data.scenario && data.tipo_fotografia !== 'flat_lay') {
+                promptPT += ` O cenário é uma ${data.scenario}`;
+                if (data.sceneObjects) {
+                    promptPT += ` que inclui ${data.sceneObjects}`;
+                }
+                if(data.scenario === 'estúdio com fundo branco' || data.scenario === 'estúdio com ciclorama (curva infinita)') {
+                    promptPT += `.
+DIREÇÃO DE ESTÚDIO PARA FUNDO BRANCO: O fundo deve ser um branco puro e infinito (ciclorama).
+A(O) modelo deve projetar sombras de contato suaves e realistas no chão e uma sombra difusa sutil na parede atrás de si.
+A direção, a intensidade e a suavidade dessas sombras devem corresponder EXATAMENTE à configuração de iluminação especificada, criando profundidade e um resultado profissional.`;
+                }
+            } else if (data.scenario && data.tipo_fotografia === 'flat_lay' && data.sceneObjects) {
+                 promptPT += ` Objetos adicionais na composição do flat lay incluem ${data.sceneObjects}.`;
+            }
+
+            promptPT += '\n\nDIREÇÃO DE FOTOGRAFIA: ';
+            if (data.lighting) {
+                let lightingDesc = `A iluminação principal é ${data.lighting}`;
+                const currentLightingDetails = Object.keys(lighting_details_pt).filter(key => data[key]).map(key => lighting_details_pt[key]);
+                if (currentLightingDetails.length > 0) {
+                    lightingDesc += `, complementada por ${currentLightingDetails.join(' e ')}`;
+                }
+                promptPT += `${lightingDesc}.`;
+            }
+            
+            let techDetailsPT = [];
+            if (data.photographer_style) techDetailsPT.push(data.photographer_style);
+            if (data.photoAngle && data.tipo_fotografia !== 'flat_lay') {
+                techDetailsPT.push(`foto tirada ${data.photoAngle}`);
+            } else if (data.tipo_fotografia === 'flat_lay') {
+                techDetailsPT.push(`foto tirada em ângulo zenital (exatamente de cima)`);
+            }
+            if (data.cameraType) techDetailsPT.push(`com uma câmera ${data.cameraType}`);
+            if (data.lensType) techDetailsPT.push(data.lensType);
+            if (data.aperture) techDetailsPT.push(data.aperture);
+            if (techDetailsPT.length > 0) promptPT += ` A direção fotográfica segue ${techDetailsPT.join(', ')}.`;
+            if (data.quality) promptPT += ` O estilo da imagem é de ${data.quality}.`;
+            if (data.post_processing) promptPT += ` O tratamento de cor e pós-produção deve seguir um estilo de ${data.post_processing}.`;
+            
+            let finalPromptPT = promptPT.replace(/, \./g, '.').replace(/ \./g, '.').replace(/ +/g, ' ').trim();
+            
+            finalPromptPT += '\n\nDIREÇÃO DE REALISMO (DETALHES): ';
+            if (data.tipo_fotografia === 'modelo_vivo') {
+                 finalPromptPT += `O penteado do cabelo deve ser ${data.hairstyle}, ${data.hairDetails}.
+A textura da pele deve ser ${data.skinTexture}. O rosto deve ter ${data.face_realism}. `;
+            }
+            if (data.fabric_realism && data.fabric_realism !== 'padrão (foco na cor e forma)') {
+                 finalPromptPT += `O tecido da roupa deve ter ${data.fabric_realism}.`;
+            }
+            
+            finalPromptPT += '\n\nCOMANDOS DE RESTRIÇÃO: ';
+            let restrictions = [];
+            if (data.footwear && data.footwear !== 'descalço(a)' && !data.shoeBrand) {
+                restrictions.push(`O calçado deve ter um design genérico. É PROIBIDO renderizar logotipos, símbolos ou qualquer referência visual a marcas famosas (como Nike, Adidas, etc.).`);
+            }
+            if (!data.socks_enabled && data.footwear && data.footwear !== 'descalço(a)') {
+                restrictions.push(`A(O) modelo NÃO DEVE usar meias. Os tornozelos devem estar visíveis e descobertos.`);
+            }
+            
+            if(restrictions.length > 0) {
+                 finalPromptPT += restrictions.join(' ');
+            } else {
+                finalPromptPT = finalPromptPT.replace('COMANDOS DE RESTRIÇÃO: ', '');
+                // Remove o header se não houver restrições
+            }
+
+
+            portugueseTextarea.value = finalPromptPT;
+            // A tradução agora chama a função segura (Netlify Function)
+            debouncedTranslate(finalPromptPT);
+        }
+
+        // --- 3. Funções Auxiliares ---
+        function copyPrompt(lang) {
+            const textToCopy = document.getElementById(`prompt-${lang}`).value;
+            if (!textToCopy) return;
+            try {
+                const textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                textArea.style.position = 'fixed';
+                textArea.style.top = '-9999px';
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                copyMessage.classList.remove('opacity-0');
+                setTimeout(() => copyMessage.classList.add('opacity-0'), 2000);
+            } catch (err) {
+                console.error('Falha ao copiar:', err);
+            }
+        }
+
+        function debounce(func, delay) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+        
+        function saveOrPrintPrompt() {
+            const data = Object.fromEntries(new FormData(form).entries());
+            let summaryHTML = `
+                <style>
+                    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #111; padding: 2rem;}
+                    h1 { font-size: 1.5rem; font-weight: bold; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem; color: #0891b2;}
+                    h2 { font-size: 1.2rem; font-weight: bold; margin-top: 1.5rem; color: #0e7490;}
+                    div { margin-bottom: 0.5rem;}
+                    strong { font-weight: bold; color: #333; }
+                    pre { background-color: #f7f7f7; padding: 1rem; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; font-family: monospace;}
+                </style>
+                <h1>Resumo do Prompt Gerado</h1>
+            `;
+            // Prompts and Seed
+            summaryHTML += `
+                <h2>Prompts e Seed</h2>
+                <div><strong>Prompt em Português:</strong><pre>${portugueseTextarea.value}</pre></div>
+                <div><strong>Prompt em Inglês:</strong><pre>${englishTextarea.value}</pre></div>
+            `;
+            const seedValue = document.getElementById('imageSeed').value;
+            if (seedValue) {
+                summaryHTML += `<div><strong>Seed da Imagem (para Consistência):</strong> ${seedValue}</div>`;
+            }
+
+
+            // Resumo das seções
+            const sections = form.querySelectorAll('.accordion-item');
+            sections.forEach(section => {
+                const title = section.querySelector('.text-2xl').textContent;
+                summaryHTML += `<h2>${title}</h2>`;
+                const fields = section.querySelectorAll('select, input');
+                fields.forEach(field => {
+                     if (field.id === 'imageSeed' && field.type === 'number') return;
+                    if (field.type === 'checkbox' && field.checked) {
+                        const label = document.querySelector(`label[for='${field.id}']`).textContent;
+                        summaryHTML += `<div><strong>${label}:</strong> Sim</div>`;
+                    } else if (field.type !== 'checkbox' && field.value) {
+                         const label = document.querySelector(`label[for='${field.id}']`);
+                         if (label) {
+                            let labelText = label.textContent;
+                            let valueText = field.value;
+                            if (field.tagName.toLowerCase() === 'select') {
+                                valueText = field.options[field.selectedIndex].text;
+                            }
+                             summaryHTML += `<div><strong>${labelText}:</strong> ${valueText}</div>`;
+                        }
+                    }
+                });
+            });
+
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(summaryHTML);
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+            printWindow.close();
+        }
+
+        // AQUI ESTÁ A NOVA FUNÇÃO QUE CHAMA A NETLIFY FUNCTION (PROXY SEGURO)
+        async function translatePortugueseToEnglish(portugueseText) {
+            if (!portugueseText.trim()) {
+                englishTextarea.value = '';
+                return;
+            }
+            
+            // Endpoint para a Netlify Function.
+            const apiUrl = '/.netlify/functions/translate';
+            englishTextarea.value = 'Traduzindo... (via Netlify Function)';
+            
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    // Envia o prompt em português no corpo
+                    body: JSON.stringify({ text: portugueseText })
+                });
+                
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Se o servidor retornar sucesso, usa o texto traduzido
+                    englishTextarea.value = result.translatedText.trim();
+                } else {
+                    // Trata erros (400 ou 500) retornados pela Function
+                    englishTextarea.value = `Erro de Tradução: ${result.error || 'Falha ao conectar.'} Verifique a chave de API no Netlify.`;
+                }
+            } catch (error) {
+                console.error('Erro na rede ou na chamada da Function:', error);
+                englishTextarea.value = 'Erro de Rede: Não foi possível chamar a função de tradução. O servidor está offline?';
+            }
+        }
+        
+        const debouncedGenerate = debounce(generatePrompts, 50);
+        // Usa a nova função de tradução segura
+        const debouncedTranslate = debounce(translatePortugueseToEnglish, 800); 
+        
+        function applyScenarioSuggestions() {
+            const selectedScenario = scenarioSelect.value;
+            const suggestions = scenarioSuggestions[selectedScenario];
+
+            if (suggestions) {
+                Object.keys(suggestions).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element && key !== 'message') {
+                        element.value = suggestions[key];
+                    }
+                });
+                suggestionFeedback.textContent = `💡 ${suggestions.message}`;
+                suggestionFeedback.classList.remove('opacity-0');
+                setTimeout(() => {
+                    suggestionFeedback.classList.add('opacity-0');
+                }, 3500);
+                debouncedGenerate();
+            }
+        }
+
+        function toggleModelSections() {
+            const selection = tipoFotografiaSelect.value;
+            if (selection === 'modelo_vivo') {
+                modeloAccordion.style.display = 'block';
+                acessoriosAccordion.style.display = 'block';
+                realismoAccordion.style.display = 'block';
+            } else {
+                modeloAccordion.style.display = 'none';
+                acessoriosAccordion.style.display = 'none';
+                realismoAccordion.style.display = 'none';
+            }
+            debouncedGenerate();
+        }
+
+
+        // --- 4. Event Listeners e Inicialização ---
+        generateSeedBtn.addEventListener('click', () => {
+            imageSeedInput.value = Math.floor(Math.random() * 999999999) + 1;
+            debouncedGenerate();
+        });
+        printButton.addEventListener('click', saveOrPrintPrompt);
+
+        clearButton.addEventListener('click', () => {
+            form.reset();
+            imageSeedInput.value = '';
+            debouncedGenerate();
+        });
+        inputs.forEach(input => {
+            input.addEventListener('input', debouncedGenerate);
+        });
+        tipoFotografiaSelect.addEventListener('input', toggleModelSections);
+
+        scenarioSelect.addEventListener('change', applyScenarioSuggestions);
+        
+        portugueseTextarea.addEventListener('input', (e) => {
+             // Apenas a tradução é chamada aqui, não a regeneração completa
+            debouncedTranslate(e.target.value)
+        });
+        
+        // Lógica do Acordeão
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordions = document.querySelectorAll('.accordion-toggle');
+            accordions.forEach(accordion => {
+                const content = accordion.nextElementSibling;
+                const icon = accordion.querySelector('svg');
+
+                if (content.classList.contains('collapsed-by-default')) {
+                    content.style.maxHeight = '0px';
+                    icon.classList.add('-rotate-180');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+
+                accordion.addEventListener('click', () => {
+                    const isCollapsed = content.style.maxHeight === '0px';
+                    icon.classList.toggle('-rotate-180');
+                    if (isCollapsed) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    } else {
+                        content.style.maxHeight = '0px';
+                    }
+                });
+            });
+            // Gera o prompt inicial ao carregar a página
+            generatePrompts();
+        });
+    </script>
+
+</body>
+</html>
